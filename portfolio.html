@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Yopi Son Haji</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --neon-blue: #00f3ff;
+            --neon-purple: #bc13fe;
+            --dark-bg: #050510;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* === LOADER ANIMATION (The "Rarely Seen" Effect) === */
+        .cyber-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            animation: curtainReveal 2.5s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+            animation-delay: 2s;
+            /* Wait for text to finish */
+            pointer-events: none;
+            /* Let clicks pass through after */
+        }
+
+        .loader-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: glitchText 0.3s infinite;
+        }
+
+        .loader-bar {
+            width: 0%;
+            height: 2px;
+            background: var(--neon-purple);
+            margin-top: 20px;
+            animation: loadBar 2s ease forwards;
+            box-shadow: 0 0 20px var(--neon-purple);
+        }
+
+        @keyframes loadBar {
+            0% {
+                width: 0%;
+                opacity: 1;
+            }
+
+            100% {
+                width: 300px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes curtainReveal {
+            0% {
+                transform: scaleY(1);
+                transform-origin: top;
+            }
+
+            100% {
+                transform: scaleY(0);
+                transform-origin: top;
+            }
+        }
+
+        @keyframes glitchText {
+            0% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-2px, 2px);
+            }
+
+            40% {
+                transform: translate(-2px, -2px);
+            }
+
+            60% {
+                transform: translate(2px, 2px);
+            }
+
+            80% {
+                transform: translate(2px, -2px);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        /* === MAIN CONTENT === */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            opacity: 0;
+            /* Hidden initially */
+            animation: contentFadeIn 1s ease forwards;
+            animation-delay: 2.2s;
+            /* Sync with loader */
+            perspective: 1000px;
+            /* For 3D effects */
+        }
+
+        @keyframes contentFadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            transform-style: preserve-3d;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            background: linear-gradient(to right, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        /* === 3D PROJECT GRID === */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 243, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* Initial State for Entry Animation */
+            transform: translateY(100px) rotateX(45deg);
+            opacity: 0;
+            animation: cardEntrance 0.8s forwards;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+            z-index: 10;
+        }
+
+        /* Staggered Delay for Cards */
+        .project-card:nth-child(1) {
+            animation-delay: 2.4s;
+        }
+
+        .project-card:nth-child(2) {
+            animation-delay: 2.6s;
+        }
+
+        .project-card:nth-child(3) {
+            animation-delay: 2.8s;
+        }
+
+        .project-card:nth-child(4) {
+            animation-delay: 3.0s;
+        }
+
+        .project-card:nth-child(5) {
+            animation-delay: 3.2s;
+        }
+
+        .project-card:nth-child(6) {
+            animation-delay: 3.4s;
+        }
+
+        @keyframes cardEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .card-media {
+            height: 200px;
+            background: #111;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .project-card:hover .card-media img {
+            transform: scale(1.1);
+        }
+
+        /* Overlay Icon */
+        .media-icon {
+            position: absolute;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.7);
+            z-index: 2;
+        }
+
+        .card-info {
+            padding: 20px;
+        }
+
+        .card-info h3 {
+            color: var(--neon-blue);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .card-info p {
+            font-size: 0.9rem;
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+        .card-tags {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            background: rgba(188, 19, 254, 0.2);
+            color: var(--neon-purple);
+            border-radius: 4px;
+            border: 1px solid rgba(188, 19, 254, 0.3);
+        }
+
+        /* === MOBILE RESPONSIVENESS === */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <div class="cyber-loader">
+        <div class="loader-text">INITIALIZING SYSTEM...</div>
+        <div class="loader-bar"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Creative Portfolio</h1>
+            <p>Video • Desain • Web Development</p>
+        </header>
+
+        <div class="showcase-grid">
+
+            <!-- Project 1: Video -->
+            <div class="project-card">
+                <div class="card-media">
+                    <i class="fas fa-play-circle media-icon"></i>
+                    <!-- Placeholder for Video Thumbnail -->
+                    <div style="width:100%; height:100%; background: linear-gradient(45deg, #111, #222);"></div>
+                </div>
+                <div class="card-info">
+                    <h3>Annab TV Production</h3>
+                    <p>Produksi program televisi edukasi dengan standar broadcast nasional. Mengelola tim dari
+                        pra-produksi hingga pasca-produksi.</p>
+                    <div class="card-tags">
+                        <span class="tag">Broadcasting</span>
+                        <span class="tag">Production Management</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: YouTube -->
+            <div class="project-card">
+                <div class="card-media">
+                    <i class="fab fa-youtube media-icon"></i>
+                    <div style="width:100%; height:100%; background: linear-gradient(45deg, #cc0000, #550000);"></div>
+                </div>
+                <div class="card-info">
+                    <h3>Channel Growth & Monetization</h3>
+                    <p>Strategi konten dan optimasi SEO YouTube yang berhasil membawa channel mencapai status monetisasi
+                        dalam waktu singkat.</p>
+                    <div class="card-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Content Strategy</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Web Design -->
+            <div class="project-card">
+                <div class="card-media">
+                    <i class="fas fa-laptop-code media-icon"></i>
+                    <div style="width:100%; height:100%; background: linear-gradient(45deg, #003366, #005599);"></div>
+                </div>
+                <div class="card-info">
+                    <h3>Web Landing Page</h3>
+                    <p>Pengembangan website responsif untuk kebutuhan branding institusi dengan desain modern dan
+                        interaktif.</p>
+                    <div class="card-tags">
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Graphic Design -->
+            <div class="project-card">
+                <div class="card-media">
+                    <i class="fas fa-paint-brush media-icon"></i>
+                    <div style="width:100%; height:100%; background: linear-gradient(45deg, #ff6600, #993300);"></div>
+                </div>
+                <div class="card-info">
+                    <h3>Visual Branding Identity</h3>
+                    <p>Pembuatan aset visual lengkap mulai dari logo, banner, hingga motion graphic untuk kebutuhan
+                        sosial media.</p>
+                    <div class="card-tags">
+                        <span class="tag">Photoshop</span>
+                        <span class="tag">After Effects</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Optional: Add interactions script if needed -->
+    <script>
+        // Simple Interaction: Tilt Effect on Cards
+        const cards = document.querySelectorAll('.project-card');
+
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const midX = rect.width / 2;
+                const midY = rect.height / 2;
+
+                const rotateX = ((y - midY) / midY) * -10; // Max 10deg
+                const rotateY = ((x - midX) / midX) * 10;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                // Reset to entering state is redundant, we want flat state
+                // But since we had an entry animation, we need to be careful not to snap back to that.
+                // We just reset transform to identity
+                card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale(1)`;
+            });
+        });
+    </script>
+</body>
+
+</html>

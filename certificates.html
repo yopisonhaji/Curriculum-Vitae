@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sertifikat - Yopi Son Haji</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --neon-gold: #ffcc00;
+            --neon-amber: #ffaa00;
+            --dark-bg: #050510;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            background-image: radial-gradient(circle at 50% 50%, rgba(255, 204, 0, 0.05), transparent 70%);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            animation: fadeIn 1.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.2);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            background: linear-gradient(to right, var(--neon-gold), #fff, var(--neon-amber));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
+        }
+
+        p {
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+
+        /* === CERTIFICATE GRID === */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .cert-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 204, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-gold);
+            box-shadow: 0 0 30px rgba(255, 204, 0, 0.15);
+        }
+
+        .cert-img-box {
+            height: 250px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-img-box i {
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.1);
+            transition: 0.5s;
+        }
+
+        .cert-card:hover .cert-img-box i {
+            transform: scale(1.2);
+            color: rgba(255, 204, 0, 0.5);
+        }
+
+        /* Holographic Overlay */
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: skewX(-25deg);
+            transition: 0.5s;
+            pointer-events: none;
+        }
+
+        .cert-card:hover::before {
+            left: 100%;
+            transition: 0.5s;
+        }
+
+        .cert-info {
+            padding: 20px;
+        }
+
+        .cert-info h3 {
+            color: var(--neon-gold);
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+
+        .cert-info .issuer {
+            font-size: 0.9rem;
+            color: #fff;
+            opacity: 0.7;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .cert-info .date {
+            font-size: 0.8rem;
+            color: #666;
+            float: right;
+        }
+
+        .btn-view {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-view:hover {
+            background: var(--neon-gold);
+            color: #000;
+            border-color: var(--neon-gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Sertifikasi & Penghargaan</h1>
+            <p>Bukti kompetensi dan dedikasi profesional.</p>
+        </header>
+
+        <div class="cert-grid">
+
+            <!-- Cert 1 -->
+            <div class="cert-card">
+                <div class="cert-img-box">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="cert-info">
+                    <span class="date">2023</span>
+                    <h3>Kompetensi Multimedia</h3>
+                    <span class="issuer">Badan Nasional Sertifikasi Profesi (BNSP)</span>
+                    <a href="#" class="btn-view">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Cert 2 -->
+            <div class="cert-card">
+                <div class="cert-img-box">
+                    <i class="fab fa-google"></i>
+                </div>
+                <div class="cert-info">
+                    <span class="date">2022</span>
+                    <h3>Digital Marketing Fundamentals</h3>
+                    <span class="issuer">Google Digital Garage</span>
+                    <a href="#" class="btn-view">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Cert 3 -->
+            <div class="cert-card">
+                <div class="cert-img-box">
+                    <i class="fas fa-video"></i>
+                </div>
+                <div class="cert-info">
+                    <span class="date">2021</span>
+                    <h3>Professional Video Editing</h3>
+                    <span class="issuer">Adobe Certified Professional</span>
+                    <a href="#" class="btn-view">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Cert 4 -->
+            <div class="cert-card">
+                <div class="cert-img-box">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="cert-info">
+                    <span class="date">2023</span>
+                    <h3>Web Development Bootcamp</h3>
+                    <span class="issuer">BuildWithAngga</span>
+                    <a href="#" class="btn-view">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

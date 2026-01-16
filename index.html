@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Yopi Son Haji</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="background-animation"></div>
+
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <div class="main-container">
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="setLanguage('id')">ID</button>
+            <span class="divider">|</span>
+            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+        </div>
+
+        <!-- Header: Profil Singkat -->
+        <header class="profile-header fade-in-down">
+            <h1>Yopi Son Haji</h1>
+            <p class="futuristic-role" data-i18n="header_role">Kepala Media & Produser Multimedia | Web Developer</p>
+        </header>
+
+        <!-- Main Content Area -->
+        <div class="content-wrapper">
+
+            <!-- Dynamic Detail View -->
+            <div class="detail-view" id="detail-view">
+                <!-- Default Message (Now behaves as the Summary Glimpse) -->
+                <div class="detail-content default-message active">
+                    <img src="profile.png" alt="Profile"
+                        style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem; border: 2px solid #00ff88; object-fit: cover;">
+                    <h2 data-i18n="summary_title">Ringkasan Profil</h2>
+                    <p data-i18n="summary_desc">Profesional multimedia dengan pengalaman lebih dari 10 tahun dalam
+                        produksi konten digital,
+                        pengelolaan media, dan pengembangan visual branding.</p>
+                </div>
+
+                <!-- Hidden Content Sections -->
+
+                <!-- 1. Identitas -->
+                <div id="content-identity" class="hidden-content">
+                    <ul class="info-list">
+                        <li><strong data-i18n="label_name">Nama:</strong> Yopi Son Haji</li>
+                        <li><strong data-i18n="label_born">Lahir:</strong> <span data-i18n="val_born">Probolinggo, 24
+                                Mei 1993</span></li>
+                        <li><strong data-i18n="label_address">Alamat:</strong> <span data-i18n="val_address">Cipete
+                                Selatan, Jakarta Selatan</span></li>
+                        <li><strong data-i18n="label_status">Status:</strong> <span
+                                data-i18n="val_status">Menikah</span></li>
+                        <li><strong data-i18n="label_sim">SIM:</strong> A & C</li>
+                    </ul>
+                </div>
+
+                <!-- 2. Posisi -->
+                <div id="content-title" class="hidden-content">
+                    <h2 data-i18n="menu_position">Posisi</h2>
+                    <h3 class="highlight" data-i18n="job_title_1">Kepala Media & Produser Multimedia</h3>
+                    <h3 class="highlight" style="font-size: 1.1rem; color: #00ccff;" data-i18n="job_title_2">Ahli Desain
+                        & Pengembang Web</h3>
+                    <p data-i18n="job_tagline">Branding posisi yang menggabungkan kepemimpinan kreatif dan kompetensi
+                        teknis.</p>
+                </div>
+
+                <!-- 3. About (Full Version) -->
+                <div id="content-summary" class="hidden-content">
+                    <h2 data-i18n="about_header">Tentang Saya</h2>
+
+                    <p class="summary-lead">
+                        Profesional Multimedia dengan pengalaman <span class="neon-cyan">10+ Tahun</span> dalam produksi
+                        konten digital, pengelolaan media, dan visual branding.
+                    </p>
+
+                    <h4 class="summary-subhead" data-i18n="key_skills">Keahlian Utama:</h4>
+                    <ul class="summary-points">
+                        <li>
+                            <i class="fas fa-caret-right"></i>
+                            <span><span class="neon-purple">Media Management</span>: Memimpin tim media & strategi
+                                konten.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-caret-right"></i>
+                            <span><span class="neon-green">YouTube Growth</span>: Mengelola channel hingga tahap <span
+                                    class="highlight-text">Monetisasi</span>.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-caret-right"></i>
+                            <span><span class="neon-blue">Produksi</span>: Mengarahkan konten Televisi & Digital
+                                berkualitas tinggi.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-caret-right"></i>
+                            <span><span class="neon-pink">Technical Creative</span>: Desain, Video Editing, &
+                                Pengembangan Web.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 4. Experience -->
+                <div id="content-experience" class="hidden-content">
+                    <h2 data-i18n="exp_header">Pengalaman Kerja</h2>
+                    <ul class="timeline">
+                        <li>
+                            <span class="date" data-i18n="exp_date_1">2023 - Sekarang</span>
+                            <h4 data-i18n="exp_role_1">Kepala Media</h4>
+                            <p><strong>Ibnu Abbas BSD</strong></p>
+                            <p class="job-desc" data-i18n="exp_desc_1">Bertanggung jawab atas perencanaan, produksi, dan
+                                distribusi konten digital, pengelolaan tim media, serta peningkatan engagement dan
+                                branding institusi.</p>
+                        </li>
+                        <li>
+                            <span class="date" data-i18n="exp_date_2">2017 - 2023</span>
+                            <h4 data-i18n="exp_role_2">Produser & Manajer Produksi</h4>
+                            <p><strong>Annab TV</strong></p>
+                            <p class="job-desc" data-i18n="exp_desc_2">Memimpin produksi program TV & digital, manajemen
+                                kru, serta quality control konten.</p>
+                        </li>
+                        <li>
+                            <span class="date" data-i18n="exp_date_3">2015 - 2017</span>
+                            <h4 data-i18n="exp_role_3">Kameramen & Editor</h4>
+                            <p><strong>Yayasan Sahabat Yamina</strong></p>
+                            <p class="job-desc" data-i18n="exp_desc_3">Operasional kamera dan editing video untuk konten
+                                yayasan.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 5. Education -->
+                <div id="content-education" class="hidden-content">
+                    <h2 data-i18n="edu_header">Pendidikan</h2>
+                    <div class="edu-item">
+                        <i class="fas fa-university" style="color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                        <h4 data-i18n="edu_major">S1 Teknik Informatika</h4>
+                        <p data-i18n="edu_school">Universitas Pamulang</p>
+                        <p class="date" data-i18n="edu_date">2022 - Sekarang</p>
+                    </div>
+                </div>
+
+                <!-- 6. Skills -->
+                <div id="content-skills" class="hidden-content">
+                    <h2 data-i18n="menu_skills">Keahlian</h2>
+
+                    <h4 style="margin-top: 10px; color: #fff;" data-i18n="skill_cat_1">Teknis Multimedia</h4>
+                    <div class="skill-tags">
+                        <span>Adobe Premiere Pro</span>
+                        <span>Photoshop</span>
+                        <span>After Effects</span>
+                    </div>
+
+                    <h4 style="margin-top: 15px; color: #fff;" data-i18n="skill_cat_2">Teknis IT</h4>
+                    <div class="skill-tags">
+                        <span>Troubleshooting PC</span>
+                        <span>Instalasi Software</span>
+                        <span>Data Recovery</span>
+                    </div>
+
+                    <h4 style="margin-top: 15px; color: #fff;" data-i18n="skill_cat_3">Sistem & Tools</h4>
+                    <div class="skill-tags">
+                        <span>macOS & Windows</span>
+                        <span>VS Code</span>
+                        <span>Android Studio</span>
+                    </div>
+                </div>
+
+                <!-- 7. Prestasi -->
+                <div id="content-achievements" class="hidden-content">
+                    <h2 data-i18n="menu_achievement">Prestasi & Pencapaian</h2>
+                    <ul class="achievement-list">
+                        <li><i class="fas fa-chart-line"></i> <span data-i18n="ach_1">Membawa channel YouTube dari nol
+                                hingga Monetisasi.</span></li>
+                        <li><i class="fas fa-tasks"></i> <span data-i18n="ach_2">Memimpin tim media produksi konten TV &
+                                Digital High Quality.</span></li>
+                        <li><i class="fas fa-cogs"></i> <span data-i18n="ach_3">Mengembangkan standar produksi kreatif
+                                dan teknis tim.</span></li>
+                    </ul>
+                </div>
+
+                <!-- 8. Portofolio -->
+                <div id="content-portfolio" class="hidden-content">
+                    <h2 data-i18n="contact_header">Media Sosial & Kontak</h2>
+                    <div class="social-links">
+                        <a href="#" class="btn primary"><i class="fas fa-phone"></i> WhatsApp</a>
+                        <a href="#" class="btn primary"
+                            style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);"><i
+                                class="fab fa-instagram"></i> Instagram</a>
+                        <a href="mailto:email@contoh.com" class="btn primary"
+                            style="background: linear-gradient(45deg, #333, #555);"><i class="fas fa-envelope"></i>
+                            Email</a>
+                    </div>
+                </div>
+
+                <!-- 9. Foto -->
+                <div id="content-photo" class="hidden-content">
+                    <h2 data-i18n="photo_header">Foto Profesional</h2>
+                    <div class="photo-container" style="text-align: center;">
+                        <img src="profile.png" alt="Yopi Son Haji"
+                            style="width: 200px; height: 200px; border-radius: 20px; border: 4px solid var(--accent-color); object-fit: cover; box-shadow: 0 0 20px rgba(0,255,136,0.3);">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Menu Grid -->
+            <nav class="menu-grid">
+                <div class="menu-item" data-target="identity">
+                    <div class="icon"><i class="fas fa-id-card"></i></div>
+                    <span data-i18n="menu_identity">Identitas</span>
+                </div>
+                <div class="menu-item" data-target="title">
+                    <div class="icon"><i class="fas fa-briefcase"></i></div>
+                    <span data-i18n="menu_position">Posisi</span>
+                </div>
+                <div class="menu-item" data-target="summary">
+                    <div class="icon"><i class="fas fa-user-circle"></i></div>
+                    <span data-i18n="menu_about">About</span>
+                </div>
+                <div class="menu-item" data-target="experience">
+                    <div class="icon"><i class="fas fa-building"></i></div>
+                    <span data-i18n="menu_experience">Experience</span>
+                </div>
+                <div class="menu-item" data-target="education">
+                    <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                    <span data-i18n="menu_education">Education</span>
+                </div>
+                <div class="menu-item" data-target="skills">
+                    <div class="icon"><i class="fas fa-code"></i></div>
+                    <span data-i18n="menu_skills">Skills</span>
+                </div>
+                <div class="menu-item" data-target="achievements">
+                    <div class="icon"><i class="fas fa-trophy"></i></div>
+                    <span data-i18n="menu_achievement">Achievement</span>
+                </div>
+                <div class="menu-item" data-target="portfolio">
+                    <div class="icon"><i class="fas fa-share-alt"></i></div>
+                    <span data-i18n="menu_contact">Contact</span>
+                </div>
+                <div class="menu-item" data-target="photo">
+                    <div class="icon"><i class="fas fa-camera"></i></div>
+                    <span data-i18n="menu_photo">Foto</span>
+                </div>
+            </nav>
+
+            <!-- Portfolio Launcher -->
+            <div class="portfolio-launcher" style="flex-direction: column; align-items: center; gap: 10px;">
+                <a href="certificates.html" target="_blank" class="btn-portfolio"
+                    style="border-color: #ffcc00; color: #ffcc00;">
+                    <span class="btn-text" data-i18n="btn_certificates">Lihat Sertifikat & Penghargaan</span>
+                    <span class="btn-glitch"></span>
+                </a>
+
+                <a href="portfolio.html" target="_blank" class="btn-portfolio">
+                    <span class="btn-text" data-i18n="btn_portfolio">Buka Portofolio Project</span>
+                    <span class="btn-glitch"></span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

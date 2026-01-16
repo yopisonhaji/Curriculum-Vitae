@@ -1,0 +1,866 @@
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --accent-color: #00ff88;
+    --text-color: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --card-bg: rgba(0, 0, 0, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: #0f0c29;
+    background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #6a11cb);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    /* Faster gradient */
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-animation::before,
+.background-animation::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    /* Bigger blobs */
+    height: 500px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.5;
+    animation: floatBlob 8s infinite alternate ease-in-out;
+    transition: background 1s ease;
+    /* Smooth transition for color change */
+}
+
+.background-animation::after {
+    background: var(--secondary-color);
+    right: 5%;
+    bottom: 5%;
+    animation-delay: -4s;
+    animation-duration: 12s;
+}
+
+@keyframes floatBlob {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(30px, 50px) scale(1.1);
+    }
+}
+
+/* Main Container */
+.main-container {
+    width: 100%;
+    max-width: 500px;
+    /* Default mobile width */
+    height: 95vh;
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    padding: 1rem;
+    /* Reduced padding to give more space to content */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 40px 0 rgba(31, 38, 135, 0.45);
+    transition: all 0.5s ease;
+}
+
+/* Header */
+.profile-header {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    /* Reduced margin */
+    flex-shrink: 0;
+}
+
+/* ... existing header styles ... */
+
+/* Content Wrapper */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    gap: 0.8rem;
+    /* Reduced gap */
+    transition: all 0.5s ease;
+}
+
+/* Detail View */
+.detail-view {
+    flex: 1;
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 1.5rem;
+    position: relative;
+    border: 1px solid var(--glass-border);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    min-height: 250px;
+    /* Ensure minimum height */
+}
+
+.detail-view::-webkit-scrollbar {
+    width: 6px;
+}
+
+.detail-view::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.detail-view::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+
+.detail-content {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    animation: zoomIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.detail-content.active {
+    display: flex;
+}
+
+.default-message {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+.default-message img {
+    margin-bottom: 1.5rem !important;
+    /* Force override inline */
+}
+
+.default-message h2 {
+    margin-bottom: 1.5rem !important;
+    letter-spacing: 1px;
+}
+
+.default-message p {
+    line-height: 1.8;
+    /* More breathing room */
+    letter-spacing: 0.5px;
+    margin-bottom: 120px !important;
+    /* Exact 120px spacing */
+    opacity: 0.9;
+    max-width: 90%;
+    /* Prevent too wide text */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Menu Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 8px;
+    flex-shrink: 0;
+    padding-top: 5px;
+}
+
+.menu-item {
+    background: rgba(255, 255, 255, 0.08);
+    /* Slightly brighter */
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    /* Softer corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 6px;
+    aspect-ratio: 1.5 / 1;
+    /* Perfect Square for Symmetry */
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    /* Ensure it fills the grid cell */
+}
+
+/* Continuous floating animation for IDLE menu items */
+.menu-item .icon {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+    animation: floatIcon 3s ease-in-out infinite, colorCycle 5s linear infinite;
+    /* Added color cycle */
+
+    /* Make outlines glow with color */
+    filter: drop-shadow(0 0 5px rgba(0, 255, 136, 0.4));
+}
+
+/* Creating individual colors for diversity before they cycle */
+.menu-item:nth-child(1) .icon {
+    color: #ff0055;
+    animation-delay: 0s, 0s;
+}
+
+.menu-item:nth-child(2) .icon {
+    color: #00ccff;
+    animation-delay: 0.5s, 0.5s;
+}
+
+.menu-item:nth-child(3) .icon {
+    color: #ffcc00;
+    animation-delay: 1s, 1s;
+}
+
+.menu-item:nth-child(4) .icon {
+    color: #00ff88;
+    animation-delay: 1.5s, 1.5s;
+}
+
+.menu-item:nth-child(5) .icon {
+    color: #cc00ff;
+    animation-delay: 2s, 2s;
+}
+
+.menu-item:nth-child(6) .icon {
+    color: #ff6600;
+    animation-delay: 2.5s, 2.5s;
+}
+
+.menu-item:nth-child(7) .icon {
+    color: #00ffcc;
+    animation-delay: 3s, 3s;
+}
+
+.menu-item:nth-child(8) .icon {
+    color: #ff00cc;
+    animation-delay: 3.5s, 3.5s;
+}
+
+.menu-item:nth-child(9) .icon {
+    color: #66ff33;
+    animation-delay: 4s, 4s;
+}
+
+/* Rainbow Color Cycle Animation */
+@keyframes colorCycle {
+    0% {
+        filter: hue-rotate(0deg) drop-shadow(0 0 5px currentColor);
+    }
+
+    100% {
+        filter: hue-rotate(360deg) drop-shadow(0 0 8px currentColor);
+    }
+}
+
+/* Stagger float animations only */
+.menu-item:nth-child(2n) .icon {
+    animation-delay: 0.5s, 0.5s;
+}
+
+.menu-item:nth-child(3n) .icon {
+    animation-delay: 1s, 1s;
+}
+
+@keyframes floatIcon {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.menu-item:hover,
+.menu-item.active-menu {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+    box-shadow: 0 0 20px var(--accent-color), inset 0 0 10px rgba(255, 255, 255, 0.5);
+    /* Strong Glow */
+    transform: translateY(-5px) scale(1.05);
+}
+
+.menu-item:hover .icon,
+.menu-item.active-menu .icon {
+    animation-duration: 1s;
+    transform: scale(1.3);
+    filter: brightness(2) drop-shadow(0 0 10px currentColor);
+    /* Super Bright */
+}
+
+.menu-item span {
+    font-size: 0.65rem;
+    /* Smaller text */
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Typography & Elements */
+.detail-content h2 {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.2rem;
+    color: var(--accent-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+
+
+/* Info List Styling (Identitas) */
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    /* Align text nicely */
+}
+
+.info-list li strong {
+    min-width: 100px;
+    /* Fixed width for labels */
+    color: var(--accent-color);
+    display: inline-block;
+}
+
+/* Job Description */
+.job-desc {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 5px;
+    font-style: italic;
+    border-left: 2px solid rgba(255, 255, 255, 0.3);
+    padding-left: 10px;
+}
+
+.highlight {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in-down {
+    animation: fadeInDown 1s ease forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === DESKTOP ADAPTABILITY (Sidebar Layout) === */
+@media (min-width: 800px) {
+    .main-container {
+        max-width: 1000px;
+        height: 85vh;
+        padding: 3rem;
+
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        /* Sidebar width | Content width */
+        grid-template-rows: auto 1fr;
+        /* Header height | Menu height */
+        grid-template-areas:
+            "header detail"
+            "menu detail";
+        gap: 2rem;
+        align-items: start;
+    }
+
+    /* Unwrap the content wrapper so children follow main grid */
+    .content-wrapper {
+        display: contents;
+    }
+
+    /* Header: Top Left */
+    .profile-header {
+        grid-area: header;
+        text-align: left;
+        margin-bottom: 0;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--glass-border);
+    }
+
+    .profile-header h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Menu Grid: Bottom Left */
+    .menu-grid {
+        grid-area: menu;
+        grid-template-columns: repeat(3, 1fr);
+        /* Keep compact grid in sidebar */
+        align-content: start;
+        padding-top: 1rem;
+        gap: 15px;
+    }
+
+    /* Restore squares on desktop where space allows */
+    .menu-item {
+        aspect-ratio: 1 / 1;
+        padding: 15px;
+    }
+
+    .menu-item .icon {
+        font-size: 1.8rem;
+    }
+
+    .menu-item span {
+        font-size: 0.8rem;
+    }
+
+    /* Detail View: Right Column (Full Height) */
+    .detail-view {
+        grid-area: detail;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        /* Slightly darker/distinct */
+        box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* === PRINT STYLES (For PDF Export) === */
+@media print {
+    body {
+        background: #fff;
+        color: #000;
+        animation: none;
+        overflow: visible;
+        display: block;
+    }
+
+    .background-animation {
+        display: none;
+    }
+
+    .main-container {
+        width: 100%;
+        max-width: none;
+        height: auto;
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        display: block;
+        backdrop-filter: none;
+    }
+
+    .profile-header {
+        text-align: left;
+        border-bottom: 2px solid #000;
+        margin-bottom: 2rem;
+    }
+
+    .profile-header h1 {
+        background: none;
+        -webkit-text-fill-color: #000;
+        color: #000;
+    }
+
+    .menu-grid {
+        display: none;
+        /* Hide interactive menu in print */
+    }
+
+    .content-wrapper {
+        display: block;
+    }
+
+    .detail-view {
+        display: block;
+        background: none;
+        border: none;
+        box-shadow: none;
+        height: auto;
+        overflow: visible;
+    }
+
+    /* Force show all content sections */
+    .detail-content {
+        display: block !important;
+        animation: none !important;
+        margin-bottom: 2rem;
+        page-break-inside: avoid;
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    .default-message {
+        display: none !important;
+    }
+
+    .hidden-content {
+        display: none;
+    }
+
+    /* Only show injected contents? 
+       Actually, since JS injects them, printing might be tricky if they aren't all active. 
+       BETTER STRATEGY: In print, we usually want to see ALL content. 
+       But our architecture hides it in 'hidden-content' divs and only shows one in '.detail-view'.
+       For a proper print, we would need to make '.hidden-content' visible and hide the interactive container.
+    */
+
+    #detail-view {
+        display: none;
+    }
+
+    /* Hide the interactive view */
+
+    .hidden-content {
+        display: block !important;
+        margin-bottom: 20px;
+        page-break-inside: avoid;
+    }
+
+    .hidden-content h2 {
+        color: #000;
+        border-bottom: 1px solid #000;
+        margin-top: 0;
+    }
+
+    .highlight {
+        color: #000;
+    }
+
+    .skill-tags span {
+        border: 1px solid #000;
+        color: #000;
+    }
+
+    .btn.primary {
+        display: none;
+    }
+
+    /* Hide buttons */
+    .icons {
+        display: none;
+    }
+}
+
+/* Large Desktop Tweak */
+@media (min-width: 1200px) {
+    .main-container {
+        max-width: 1000px;
+    }
+}
+
+/* === PORTFOLIO LAUNCHER === */
+.portfolio-launcher {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    /* Spacing from grid */
+    padding-bottom: 5px;
+}
+
+.btn-portfolio {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--accent-color);
+    border-radius: 30px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+    width: 100%;
+    /* Full width on mobile preferred? Or centered capsule? */
+    max-width: 300px;
+    /* Limit width */
+}
+
+.btn-portfolio:hover {
+    background: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+    transform: translateY(-2px);
+}
+
+.btn-portfolio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transform: skewX(-20deg);
+    animation: mirrorShine 4s infinite ease-in-out;
+}
+
+@keyframes mirrorShine {
+    0% {
+        left: -150%;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    20% {
+        left: 150%;
+        opacity: 0;
+    }
+
+    100% {
+        left: 150%;
+        opacity: 0;
+    }
+}
+
+.btn-portfolio:hover::before {
+    /* Disable default hover since animation is constantly running */
+    animation: none;
+    left: 100%;
+    transition: 0.5s;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+}
+
+/* === FUTURISTIC ROLE TEXT === */
+.futuristic-role {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ffffff, #00ffcc, #ffffff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: quantum-flux 8s infinite alternate;
+    position: relative;
+    display: inline-block;
+}
+
+@keyframes quantum-flux {
+
+    0%,
+    80% {
+        text-shadow: 0 0 0 transparent;
+        transform: scale(1);
+        filter: blur(0);
+    }
+
+    82% {
+        text-shadow: -2px 0 red, 2px 0 blue;
+        transform: skewX(20deg);
+        filter: blur(0.5px);
+    }
+
+    83% {
+        text-shadow: 2px 0 red, -2px 0 blue;
+        transform: skewX(-20deg);
+    }
+
+    84% {
+        text-shadow: 0 0 0 transparent;
+        transform: scale(1.05);
+        filter: brightness(2) drop-shadow(0 0 5px #00ffcc);
+    }
+
+    100% {
+        text-shadow: 0 0 0 transparent;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+/* === FUTURISTIC TEXT STYLES (Summary) === */
+.summary-lead {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 15px;
+    background: linear-gradient(90deg, rgba(0, 255, 136, 0.1), transparent);
+    padding: 10px 15px;
+    border-radius: 0 10px 10px 0;
+}
+
+.summary-subhead {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.summary-points {
+    list-style: none;
+    padding: 0;
+}
+
+.summary-points li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    opacity: 0;
+    /* Convert for animation */
+    animation: slideInRight 0.5s ease forwards;
+}
+
+/* Staggered Animation for Points */
+.summary-points li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.summary-points li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.summary-points li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.summary-points li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.summary-points li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Neon Text Palette */
+.neon-cyan {
+    color: #00f3ff;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+    font-weight: bold;
+}
+
+.neon-purple {
+    color: #bc13fe;
+    text-shadow: 0 0 10px rgba(188, 19, 254, 0.5);
+    font-weight: bold;
+}
+
+.neon-green {
+    color: #00ff9d;
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+    font-weight: bold;
+}
+
+.neon-blue {
+    color: #2979ff;
+    text-shadow: 0 0 10px rgba(41, 121, 255, 0.5);
+    font-weight: bold;
+}
+
+.neon-pink {
+    color: #ff0055;
+    text-shadow: 0 0 10px rgba(255, 0, 85, 0.5);
+    font-weight: bold;
+}
+
+.highlight-text {
+    background: linear-gradient(to right, #ffe259, #ffa751);
+    /* Bright Gold/Orange */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 167, 81, 0.4);
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
