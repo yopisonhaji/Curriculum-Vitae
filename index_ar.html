@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية - يوبي سون حجي</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- Noto Sans Arabic for better Arabic typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Force Arabic Font */
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        span,
+        a,
+        li,
+        button {
+            font-family: 'Noto Sans Arabic', 'Outfit', sans-serif !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background-animation"></div>
+
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <div class="main-container">
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+            <button class="lang-btn" onclick="window.location.href='index.html'">ID</button>
+            <span class="divider">|</span>
+            <button class="lang-btn" onclick="window.location.href='index_en.html'">EN</button>
+            <span class="divider">|</span>
+            <button class="lang-btn active" onclick="window.location.href='index_ar.html'">AR</button>
+        </div>
+
+        <!-- Header: Profile Summary -->
+        <header class="profile-header fade-in-down">
+            <h1>يوبي سون حجي</h1>
+            <p class="futuristic-role">رئيس قسم الإعلام ومنتج وسائط متعددة | مطور ويب</p>
+        </header>
+
+        <!-- Main Content Area -->
+        <div class="content-wrapper">
+
+            <!-- Dynamic Detail View -->
+            <div class="detail-view" id="detail-view">
+                <!-- Default Message / Summary Glimpse -->
+                <div class="detail-content default-message active">
+                    <img src="profile.jpg" alt="Profile"
+                        style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem; border: 2px solid #00ff88; object-fit: cover;">
+                    <h2>ملخص الملف الشخصي</h2>
+                    <p>محترف وسائط متعددة يتمتع بخبرة تزيد عن 10 سنوات في إنتاج المحتوى الرقمي، وإدارة وسائل الإعلام،
+                        وتطوير العلامة التجارية البصرية.</p>
+                </div>
+
+                <!-- Hidden Content Sections -->
+
+                <!-- 1. Identity -->
+                <div id="content-identity" class="hidden-content">
+                    <ul class="info-list">
+                        <li><strong>الاسم:</strong> يوبي سون حجي</li>
+                        <li><strong>العمر:</strong> <span>32 سنة</span></li>
+                        <li><strong>العنوان:</strong> <span>جنوب جاكرتا، إندونيسيا</span></li>
+                        <li><strong>الحالة:</strong> <span>متزوج</span></li>
+                        <li><strong>رخص القيادة:</strong> A & C</li>
+                    </ul>
+                </div>
+
+                <!-- 2. Position -->
+                <div id="content-title" class="hidden-content">
+                    <h2>المنصب</h2>
+                    <h3 class="highlight">رئيس قسم الإعلام ومنتج وسائط متعددة</h3>
+                    <h3 class="highlight" style="font-size: 1.1rem; color: #00ccff;">خبير وسائط متعددة ومطور ويب</h3>
+                    <p>قيادة فريق الإعلام والدعم الفني في إحدى المدارس الخاصة في BSD، تانجيرانج لتعزيز العلامة التجارية
+                        وزيادة ظهور المؤسسة. مسؤول عن تصميم وتنفيذ استراتيجيات الاتصال لتعريف المدرسة لجمهور أوسع، مع
+                        التركيز على زيادة تسجيل الطلاب الجدد. إدارة وتطوير محتوى رقمي فعال لزيادة التفاعل والوعي، وبناء
+                        علاقات أقوى مع المجتمع.</p>
+                </div>
+
+                <!-- 3. About -->
+                <div id="content-summary" class="hidden-content">
+                    <h2>عني</h2>
+
+                    <p class="summary-lead">
+                        مع خبرة تزيد عن <span class="neon-cyan">عقد من الزمان</span> في عالم الوسائط المتعددة،
+                        توليت أدوارًا رئيسية في تطوير محتوى مرئي مذهل وتعزيز العلامة التجارية للمؤسسات من خلال المنصات
+                        الرقمية، وخاصة يوتيوب. كشخص متفاني ولديه مهارات تقنية عالية في التصميم وتطوير الويب، أنا عازم
+                        على تقديم مساهمة كبيرة لفريق الإبداع والإنتاج في الشركة.
+                    </p>
+                    <h4 class="summary-subhead">المهارات والخبرات الرئيسية:</h4>
+                    <ul class="summary-points">
+                        <li>
+                            <i class="fas fa-caret-left"></i>
+                            <span><span class="neon-purple">إدارة الإعلام</span>: قيادة فرق الإعلام وتصميم استراتيجيات
+                                محتوى فعالة لزيادة الظهور والتفاعل.</span>
+                        <li>
+                            <i class="fas fa-caret-left"></i>
+                            <span><span class="neon-green">نمو يوتيوب</span>: إدارة وتطوير قنوات يوتيوب من المراحل
+                                الأولية حتى الوصول إلى مرحلة <span class="highlight-text">تحقيق الدخل
+                                    (Monetization)</span>.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-caret-left"></i>
+                            <span><span class="neon-blue">إنتاج المحتوى</span>: توجيه إنشاء محتوى عالي الجودة لمنصات
+                                التلفزيون والرقمية، وضمان معايير إنتاج متسقة.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-caret-left"></i>
+                            <span><span class="neon-pink">الإبداع التقني</span>: إتقان التصميم الجرافيكي، وتحرير
+                                الفيديو، وتطوير الويب لإنشاء تجارب بصرية جذابة ووظيفية.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-caret-left"></i>
+                            <span><span class="neon-cyan">دمج الذكاء الاصطناعي مع الوسائط المتعددة</span>: دمج الذكاء
+                                الاصطناعي (AI) مع الوسائط المتعددة لضمان الحداثة والابتكار الذي يواكب العصر.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 4. Experience -->
+                <div id="content-experience" class="hidden-content">
+                    <h2>خبرة العمل</h2>
+                    <ul class="timeline">
+                        <li>
+                            <span class="date">2023 - الحاضر</span>
+                            <h4>رئيس قسم الإعلام</h4>
+                            <p><strong>ابن عباس BSD</strong></p>
+                            <p class="job-desc">مسؤول عن تخطيط وإنتاج وتوزيع المحتوى الرقمي، وإدارة فريق الإعلام، وزيادة
+                                التفاعل والعلامة التجارية للمؤسسة.</p>
+                        </li>
+                        <li>
+                            <span class="date">2017 - 2023</span>
+                            <h4>منتج ومدير إنتاج</h4>
+                            <p><strong>تلفزيون أناب (Annab TV)</strong></p>
+                            <p class="job-desc">قيادة إنتاج البرامج التلفزيونية والرقمية، وإدارة الطاقم، ومراقبة جودة
+                                المحتوى.</p>
+                        </li>
+                        <li>
+                            <span class="date">2015 - 2017</span>
+                            <h4>مصور ومحرر</h4>
+                            <p><strong>مؤسسة أصدقاء يامينا (Yayasan Sahabat Yamina)</strong></p>
+                            <p class="job-desc">تشغيل الكاميرا وتحرير الفيديو لمحتوى المؤسسة.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 5. Education -->
+                <div id="content-education" class="hidden-content">
+                    <h2>التعليم</h2>
+                    <div class="edu-item">
+                        <i class="fas fa-university" style="color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                        <h4>بكالوريوس هندسة المعلوماتية</h4>
+                        <p>جامعة بامولانج (Universitas Pamulang)</p>
+                        <p class="date">2022 - الحاضر</p>
+                    </div>
+                    <div class="edu-item" style="margin-top: 15px;">
+                        <i class="fas fa-university" style="color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                        <h4>بكالوريوس الأدب العربي</h4>
+                        <p>المأوى شيلينغسي (Al-Mawa Cileungsi)</p>
+                        <p class="date">2022 - الحاضر</p>
+                    </div>
+                </div>
+
+                <!-- 6. Skills -->
+                <div id="content-skills" class="hidden-content">
+                    <h2>المهارات التقنية</h2>
+
+                    <ul class="summary-points" style="margin-top: 15px;">
+                        <li>
+                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                            <span><span class="neon-purple">خبرة Adobe Creative Cloud</span>: إتقان عميق لاستخدام
+                                تطبيقات Adobe Premiere Pro و Photoshop وأدوات التصميم الجرافيكي وتحرير الفيديو الأخرى،
+                                سواء على macOS أو Windows.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                            <span><span class="neon-cyan">مهارات البرمجة</span>: إتقان تطوير الويب باستخدام
+                                <span class="highlight-text"><i class="fab fa-html5"></i> HTML</span>،
+                                <span class="highlight-text"><i class="fab fa-css3-alt"></i> CSS</span>،
+                                <span class="highlight-text"><i class="fab fa-php"></i> PHP</span>، و
+                                <span class="highlight-text"><i class="fab fa-js"></i> JavaScript</span> مع
+                                <span class="highlight-text"><i class="fas fa-file-code"></i> Visual Studio Code</span>
+                                كبيئة تطوير.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                            <span><span class="neon-green">الصيانة والإصلاح التقني</span>: خبير في صيانة واستكشاف أخطاء
+                                أجهزة الكمبيوتر واللابتوب، بما في ذلك البرمجيات والأجهزة على أنظمة التشغيل Windows و
+                                macOS.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                            <span><span class="neon-blue">استعادة البيانات</span>: قدرة فائقة على استعادة البيانات
+                                المفرمتة أو المفقودة من وسائط التخزين المختلفة بتقنيات فعالة وآمنة.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                            <span><span class="neon-pink">تثبيت البرامج واستكشاف الأخطاء</span>: ماهر في تثبيت واستكشاف
+                                أخطاء البرامج لحل المشكلات المختلفة المتعلقة بأنظمة التشغيل الرئيسية.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                            <span><span class="neon-cyan">الابتكار التقني</span>: ملتزم بتقديم حلول إبداعية في مجال
+                                التكنولوجيا، وزيادة الإنتاجية، ودفع الابتكار التقني.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                            <span><span class="highlight-text">البث المباشر</span>: خبرة تزيد عن 500 ساعة في تنظيم البث
+                                المباشر، باستخدام برامج مختلفة مثل Wirecast و vMix و OBS و Prism Live Studio.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
+                            <span><span class="neon-purple">تصميم أوامر الذكاء الاصطناعي الإبداعية</span>: قدرة تقنية
+                                على <span class="highlight-text">تصميم الأوامر (Prompts) بشكل منظم وإبداعي</span> لإنشاء
+                                محتوى وسائط متعددة فعال وموجه نحو الهدف يعتمد على الذكاء الاصطناعي.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 7. Achievements -->
+                <div id="content-achievements" class="hidden-content">
+                    <h2>الجوائز والإنجازات</h2>
+                    <ul class="achievement-list">
+                        <li><i class="fas fa-tasks"></i> <span>قيادة وإدارة فرق إعلامية في إنتاج محتوى تلفزيوني ورقمي
+                                عالي الجودة، مع إدارة فعالة للجداول الزمنية للمشروع.</span>
+                        </li>
+                        <li><i class="fab fa-youtube"></i> <span>تطوير وإدارة العديد من قنوات يوتيوب من الصفر حتى مرحلة
+                                تحقيق الدخل، من خلال استراتيجيات بناء علامة تجارية متسقة وموجهة.</span></li>
+                        <li><i class="fas fa-chart-line"></i> <span>المساهمة بشكل كبير في زيادة التفاعل والوعي بالعلامة
+                                التجارية من خلال تخطيط محتوى استراتيجي قائم على الجمهور.</span></li>
+                        <li><i class="fas fa-lightbulb"></i> <span>المبادرة بالابتكار في تقنيات الإنتاج والسرد البصري
+                                لرفع معايير الإبداع والقدرات التقنية للفريق.</span></li>
+                    </ul>
+                </div>
+
+                <!-- 8. Portfolio/Contact -->
+                <div id="content-portfolio" class="hidden-content">
+                    <h2>وسائل التواصل الاجتماعي والاتصال</h2>
+                    <ul class="info-list">
+                        <li>
+                            <strong style="min-width: 120px;"><i class="fab fa-twitter" style="margin-left: 8px;"></i>
+                                X:</strong>
+                            <span>yopi son haji</span>
+                        </li>
+                        <li>
+                            <strong style="min-width: 120px;"><i class="fab fa-github" style="margin-left: 8px;"></i>
+                                GitHub:</strong>
+                            <a href="https://h7.cl/1h-0q" target="_blank"
+                                style="color: #fff; text-decoration: none;">GitHub Link</a>
+                        </li>
+                        <li>
+                            <strong style="min-width: 120px;"><i class="fab fa-linkedin" style="margin-left: 8px;"></i>
+                                LinkedIn:</strong>
+                            <a href="http://tiny.cc/957mxz" target="_blank"
+                                style="color: #fff; text-decoration: none;">LinkedIn Link</a>
+                        </li>
+                        <li>
+                            <strong style="min-width: 120px;"><i class="fas fa-phone-alt" style="margin-left: 8px;"></i>
+                                الهاتف:</strong>
+                            <a href="tel:+6281380004443" style="color: #fff; text-decoration: none;">+62
+                                813-8000-4443</a>
+                        </li>
+                        <li>
+                            <strong style="min-width: 120px;"><i class="fas fa-envelope" style="margin-left: 8px;"></i>
+                                البريد الإلكتروني:</strong>
+                            <a href="mailto:yulison47@gmail.com"
+                                style="color: #fff; text-decoration: none;">yulison47@gmail.com</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <!-- 9. Photo -->
+                <div id="content-photo" class="hidden-content">
+                    <h2>الصورة المهنية</h2>
+                    <div class="photo-container" style="text-align: center;">
+                        <img src="profile.jpg" alt="Yopi Son Haji"
+                            style="width: 200px; height: 200px; border-radius: 20px; border: 4px solid var(--accent-color); object-fit: cover; box-shadow: 0 0 20px rgba(0,255,136,0.3);">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Menu Grid -->
+            <nav class="menu-grid">
+                <div class="menu-item" data-target="identity">
+                    <div class="icon"><i class="fas fa-id-card"></i></div>
+                    <span>الهوية</span>
+                </div>
+                <div class="menu-item" data-target="title">
+                    <div class="icon"><i class="fas fa-briefcase"></i></div>
+                    <span>المنصب</span>
+                </div>
+                <div class="menu-item" data-target="summary">
+                    <div class="icon"><i class="fas fa-user-circle"></i></div>
+                    <span>عني</span>
+                </div>
+                <div class="menu-item" data-target="experience">
+                    <div class="icon"><i class="fas fa-building"></i></div>
+                    <span>الخبرة</span>
+                </div>
+                <div class="menu-item" data-target="education">
+                    <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                    <span>التعليم</span>
+                </div>
+                <div class="menu-item" data-target="skills">
+                    <div class="icon"><i class="fas fa-code"></i></div>
+                    <span>المهارات</span>
+                </div>
+                <div class="menu-item" data-target="achievements">
+                    <div class="icon"><i class="fas fa-trophy"></i></div>
+                    <span>الجوائز</span>
+                </div>
+                <div class="menu-item" data-target="portfolio">
+                    <div class="icon"><i class="fas fa-share-alt"></i></div>
+                    <span>تواصل</span>
+                </div>
+                <div class="menu-item" data-target="photo">
+                    <div class="icon"><i class="fas fa-camera"></i></div>
+                    <span>صورة</span>
+                </div>
+            </nav>
+
+            <!-- Buttons -->
+            <div
+                style="margin-top: auto; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 20px;">
+                <button onclick="window.print()" class="btn-download" id="download-btn">
+                    <i class="fas fa-file-download" style="margin-left: 8px; margin-right: 0;"></i> تحميل السيرة الذاتية
+                </button>
+
+                <div class="portfolio-launcher">
+                    <a href="certificates.html" target="_blank" class="btn-portfolio cert-btn">
+                        <span class="btn-text">عرض الشهادات والجوائز</span>
+                        <span class="btn-glitch"></span>
+                    </a>
+
+                    <a href="portfolio.html" target="_blank" class="btn-portfolio">
+                        <span class="btn-text">فتح معرض المشاريع</span>
+                        <span class="btn-glitch"></span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

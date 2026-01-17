@@ -1,0 +1,79 @@
+
+/* === RTL SUPPORT (Right-to-Left) === */
+html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .profile-header {
+    text-align: center;
+}
+
+html[dir="rtl"] .info-list li {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+html[dir="rtl"] .info-list li strong {
+    margin-right: 0;
+    margin-left: 8px; /* Flip margin for labels */
+}
+
+html[dir="rtl"] .summary-points li i,
+html[dir="rtl"] .achievement-list li i,
+html[dir="rtl"] .edu-item i,
+html[dir="rtl"] .info-list i {
+    margin-right: 0;
+    margin-left: 10px; /* Flip icon margin */
+}
+
+html[dir="rtl"] .job-desc {
+    border-left: none;
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+html[dir="rtl"] .summary-lead {
+    border-left: none;
+    border-right: 3px solid var(--accent-color);
+    padding-left: 0;
+    padding-right: 15px;
+    border-radius: 10px 0 0 10px;
+    background: linear-gradient(-90deg, rgba(0, 255, 136, 0.1), transparent);
+}
+
+/* Flip Animations for RTL */
+@keyframes slideInRightRTL {
+    from {
+        opacity: 0;
+        transform: translateX(20px); /* Coming from left instead of right */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+html[dir="rtl"] .summary-points li {
+    animation-name: slideInRightRTL;
+}
+
+/* Desktop Sidebar Adjustments for RTL */
+@media (min-width: 800px) {
+    html[dir="rtl"] .main-container {
+        grid-template-areas: 
+            "detail header"
+            "detail menu"; /* Mirror grid */
+        grid-template-columns: 1fr 320px; /* Swap column sizes */
+    }
+
+    html[dir="rtl"] .profile-header {
+        text-align: right;
+    }
+    
+    html[dir="rtl"] .btn-download {
+        left: auto;
+        right: 2rem; /* Move to bottom right */
+    }
+}
