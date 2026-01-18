@@ -4,370 +4,478 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Yopi Son Haji</title>
+    <title>SatuJalan - Satu Jalan, Semua Solusi</title>
+    <meta name="description" content="Jasa Panggilan Service Elektronik & Software Development 24 Jam Jabodetabek.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
-    <div class="background-animation"></div>
-
-    <!-- Custom Cursor Elements -->
-    <div class="cursor-dot" data-cursor-dot></div>
-    <div class="cursor-outline" data-cursor-outline></div>
-
-    <div class="main-container">
-        <!-- Language Switcher -->
-        <div class="lang-switcher">
-            <button class="lang-btn active" onclick="window.location.href='index.html'">ID</button>
-            <span class="divider">|</span>
-            <button class="lang-btn" onclick="window.location.href='index_en.html'">EN</button>
-            <span class="divider">|</span>
-            <button class="lang-btn" onclick="window.location.href='index_ar.html'">AR</button>
-        </div>
-
-        <!-- Header: Profil Singkat -->
-        <header class="profile-header fade-in-down">
-            <h1>Yopi Son Haji</h1>
-            <p class="futuristic-role" data-i18n="header_role">Kepala Media & Produser Multimedia | Web Developer</p>
-        </header>
-
-        <!-- Main Content Area -->
-        <div class="content-wrapper">
-
-            <!-- Dynamic Detail View -->
-            <div class="detail-view" id="detail-view">
-                <!-- Default Message (Now behaves as the Summary Glimpse) -->
-                <div class="detail-content default-message active">
-                    <img src="profile.jpg" alt="Profile"
-                        style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem; border: 2px solid #00ff88; object-fit: cover;">
-                    <h2 data-i18n="summary_title">Ringkasan Profil</h2>
-                    <p data-i18n="summary_desc">Profesional multimedia dengan pengalaman lebih dari 10 tahun dalam
-                        produksi konten digital,
-                        pengelolaan media, dan pengembangan visual branding.</p>
-                </div>
-
-                <!-- Hidden Content Sections -->
-
-                <!-- 1. Identitas -->
-                <div id="content-identity" class="hidden-content">
-                    <ul class="info-list">
-                        <li><strong data-i18n="label_name">Nama:</strong> Yopi Son Haji</li>
-                        <li><strong data-i18n="label_born">Umur:</strong> <span data-i18n="val_born">32 Tahun</span>
-                        </li>
-                        <li><strong data-i18n="label_address">Alamat:</strong> <span data-i18n="val_address">Cipete
-                                Selatan, Jakarta Selatan, Indonesia</span></li>
-                        <li><strong data-i18n="label_status">Status:</strong> <span
-                                data-i18n="val_status">Menikah</span></li>
-                        <li><strong data-i18n="label_sim">SIM:</strong> A & C</li>
-                    </ul>
-                </div>
-
-                <!-- 2. Posisi -->
-                <div id="content-title" class="hidden-content">
-                    <h2 data-i18n="menu_position">Posisi</h2>
-                    <h3 class="highlight" data-i18n="job_title_1">Kepala Media & Produser Multimedia</h3>
-                    <h3 class="highlight" style="font-size: 1.1rem; color: #00ccff;" data-i18n="job_title_2">Ahli
-                        multimedia
-                        & Web Developer</h3>
-                    <p data-i18n="job_tagline">Memimpin tim media dan IT Support, di salah satu Sekolah Swasta di BSD,
-                        Tangerang untuk memperkuat branding dan meningkatkan visibilitas institusi. Bertanggung jawab
-                        dalam merancang dan melaksanakan strategi komunikasi untuk memperkenalkan sekolah kepada
-                        khalayak luas, dengan fokus pada peningkatan pendaftaran siswa baru. Mengelola dan mengembangkan
-                        konten digital yang efektif untuk meningkatkan engagement, awareness, serta membangun hubungan
-                        yang lebih kuat dengan komunitas.</p>
-                </div>
-
-                <!-- 3. About (Full Version) -->
-                <div id="content-summary" class="hidden-content">
-                    <h2 data-i18n="about_header">Tentang Saya</h2>
-
-                    <p class="summary-lead">
-                        Dengan pengalaman lebih dari <span class="neon-cyan">satu dekade</span> di dunia multimedia,
-                        saya telah mengemban peran penting dalam mengembangkan konten visual yang memukau dan
-                        meningkatkan branding lembaga melalui platform digital, khususnya YouTube. Sebagai seorang yang
-                        berdedikasi dan memiliki kemampuan teknis tinggi dalam desain dan pengembangan web, saya
-                        bertekad untuk memberikan kontribusi yang signifikan pada tim kreatif dan produksi perusahaan.
-                    </p>
-                    <h4 class="summary-subhead" data-i18n="key_skills">Keahlian Utama:</h4>
-                    <ul class="summary-points">
-                        <li>
-                            <i class="fas fa-caret-right"></i>
-                            <span><span class="neon-purple">Manajemen Media</span>: Memimpin tim media dan merancang
-                                strategi konten
-                                yang efektif untuk meningkatkan visibilitas dan engagement.</span>
-                        <li>
-                            <i class="fas fa-caret-right"></i>
-                            <span><span class="neon-green">Pertumbuhan YouTube</span>: Mengelola dan mengembangkan
-                                channel YouTube mulai dari tahap awal hingga mencapai
-                                <span class="highlight-text">monetisasi</span>.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-caret-right"></i>
-                            <span><span class="neon-blue">Produksi Konten</span>: Mengarahkan pembuatan konten
-                                berkualitas tinggi
-                                untuk platform televisi dan digital, memastikan standar produksi yang konsisten.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-caret-right"></i>
-                            <span><span class="neon-pink">Kreatif Teknis</span>: Menguasai desain grafis, pengeditan
-                                video, dan
-                                pengembangan web untuk menciptakan pengalaman visual yang menarik dan fungsional.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-caret-right"></i>
-                            <span><span class="neon-cyan">Integrasi AI dengan Multimedia</span>: Mengintegrasikan
-                                kecerdasan buatan
-                                (AI) dengan multimedia untuk memastikan relevansi dan inovasi yang mengikuti
-                                perkembangan zaman.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- 4. Experience -->
-                <div id="content-experience" class="hidden-content">
-                    <h2 data-i18n="exp_header">Pengalaman Kerja</h2>
-                    <ul class="timeline">
-                        <li>
-                            <span class="date" data-i18n="exp_date_1">2023 - Sekarang</span>
-                            <h4 data-i18n="exp_role_1">Kepala Media</h4>
-                            <p><strong>Ibnu Abbas BSD</strong></p>
-                            <p class="job-desc" data-i18n="exp_desc_1">Bertanggung jawab atas perencanaan, produksi, dan
-                                distribusi konten digital, pengelolaan tim media, serta peningkatan engagement dan
-                                branding institusi.</p>
-                        </li>
-                        <li>
-                            <span class="date" data-i18n="exp_date_2">2017 - 2023</span>
-                            <h4 data-i18n="exp_role_2">Produser & Manajer Produksi</h4>
-                            <p><strong>Annab TV</strong></p>
-                            <p class="job-desc" data-i18n="exp_desc_2">Memimpin produksi program TV & digital, manajemen
-                                kru, serta quality control konten.</p>
-                        </li>
-                        <li>
-                            <span class="date" data-i18n="exp_date_3">2015 - 2017</span>
-                            <h4 data-i18n="exp_role_3">Kameramen & Editor</h4>
-                            <p><strong>Yayasan Sahabat Yamina</strong></p>
-                            <p class="job-desc" data-i18n="exp_desc_3">Operasional kamera dan editing video untuk konten
-                                yayasan.</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- 5. Education -->
-                <div id="content-education" class="hidden-content">
-                    <h2 data-i18n="edu_header">Pendidikan</h2>
-                    <div class="edu-item">
-                        <i class="fas fa-university" style="color: var(--accent-color); margin-bottom: 0.5rem;"></i>
-                        <h4 data-i18n="edu_major">S1 Teknik Informatika</h4>
-                        <p data-i18n="edu_school">Universitas Pamulang</p>
-                        <p class="date" data-i18n="edu_date">2022 - Sekarang</p>
-                    </div>
-                    <div class="edu-item" style="margin-top: 15px;">
-                        <i class="fas fa-university" style="color: var(--accent-color); margin-bottom: 0.5rem;"></i>
-                        <h4>S1 Sastra Arab</h4>
-                        <p>Al-Mawa Cilengsi</p>
-                        <p class="date">2022 - Sekarang</p>
-                    </div>
-                </div>
-
-                <!-- 6. Skills -->
-                <div id="content-skills" class="hidden-content">
-                    <h2 data-i18n="menu_skills">Keahlian Teknis</h2>
-
-                    <ul class="summary-points" style="margin-top: 15px;">
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-purple">Adobe Creative Cloud Expertise</span>: Menguasai secara
-                                mendalam penggunaan
-                                aplikasi Adobe Premiere Pro, Photoshop, dan alat desain grafis serta pengeditan video
-                                lainnya, baik di macOS maupun Windows.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-cyan">Kemampuan Pemrograman</span>: Menguasai pengembangan web
-                                menggunakan
-                                <span class="highlight-text"><i class="fab fa-html5"></i> HTML</span>,
-                                <span class="highlight-text"><i class="fab fa-css3-alt"></i> CSS</span>,
-                                <span class="highlight-text"><i class="fab fa-php"></i> PHP</span>, dan
-                                <span class="highlight-text"><i class="fab fa-js"></i> JavaScript</span> dengan
-                                <span class="highlight-text"><i class="fas fa-file-code"></i> Visual Studio Code</span>
-                                sebagai lingkungan pengembangan.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-green">Perawatan & Perbaikan Teknis</span>: Ahli dalam pemeliharaan
-                                dan
-                                troubleshooting perangkat PC serta laptop, mencakup software dan hardware pada sistem
-                                operasi Windows dan macOS.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-blue">Pemulihan Data</span>: Memiliki kemampuan unggul dalam
-                                memulihkan data yang
-                                terformat atau hilang dari berbagai media penyimpanan dengan teknik yang efisien dan
-                                aman.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-pink">Instalasi Software & Troubleshooting</span>: Terampil dalam
-                                instalasi dan
-                                troubleshooting software untuk mengatasi berbagai masalah yang terkait dengan sistem
-                                operasi utama.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-cyan">Inovasi Teknis</span>: Berkomitmen untuk memberikan solusi
-                                kreatif dalam
-                                bidang teknologi, meningkatkan produktivitas dan mendorong inovasi teknis.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="highlight-text">Live Streaming</span>: Berpengalaman lebih dari 500 jam
-                                dalam
-                                penyelenggaraan live streaming, menggunakan berbagai software seperti Wirecast, vMix,
-                                OBS, dan PrimLive Studio.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-purple">Creative AI Prompt Design</span>: Kemampuan teknis dalam
-                                <span class="highlight-text">merancang prompt secara terstruktur dan kreatif</span>
-                                untuk menghasilkan konten
-                                multimedia berbasis AI yang efektif dan sesuai tujuan.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- 7. Prestasi -->
-                <div id="content-achievements" class="hidden-content">
-                    <h2 data-i18n="menu_achievement">Prestasi & Pencapaian</h2>
-                    <ul class="achievement-list">
-                        <li><i class="fas fa-tasks"></i> <span>Memimpin dan mengelola tim media dalam produksi konten TV
-                                dan digital berkualitas tinggi, dengan pengelolaan timeline proyek yang efisien.</span>
-                        </li>
-                        <li><i class="fab fa-youtube"></i> <span>Mengembangkan dan mengelola beberapa channel YouTube
-                                dari tahap nol hingga monetisasi, melalui strategi branding yang konsisten dan
-                                terarah.</span></li>
-                        <li><i class="fas fa-chart-line"></i> <span>Berkontribusi signifikan dalam peningkatan
-                                engagement dan brand awareness melalui perencanaan konten yang strategis dan berbasis
-                                audiens.</span></li>
-                        <li><i class="fas fa-lightbulb"></i> <span>Menginisiasi inovasi pada teknik produksi dan narasi
-                                visual guna meningkatkan standar kreativitas serta kapabilitas teknis tim.</span></li>
-                    </ul>
-                </div>
-
-                <!-- 8. Portofolio -->
-                <div id="content-portfolio" class="hidden-content">
-                    <h2 data-i18n="contact_header">Media Sosial & Kontak</h2>
-                    <ul class="info-list">
-                        <li>
-                            <strong style="min-width: 120px;"><i class="fab fa-twitter" style="margin-right: 8px;"></i>
-                                X:</strong>
-                            <span>yopi son haji</span>
-                        </li>
-                        <li>
-                            <strong style="min-width: 120px;"><i class="fab fa-github" style="margin-right: 8px;"></i>
-                                GitHub:</strong>
-                            <a href="https://h7.cl/1h-0q" target="_blank"
-                                style="color: #fff; text-decoration: none;">Link GitHub</a>
-                        </li>
-                        <li>
-                            <strong style="min-width: 120px;"><i class="fab fa-linkedin" style="margin-right: 8px;"></i>
-                                LinkedIn:</strong>
-                            <a href="http://tiny.cc/957mxz" target="_blank"
-                                style="color: #fff; text-decoration: none;">Link LinkedIn</a>
-                        </li>
-                        <li>
-                            <strong style="min-width: 120px;"><i class="fas fa-phone-alt"
-                                    style="margin-right: 8px;"></i> Telepon:</strong>
-                            <a href="tel:+6281380004443" style="color: #fff; text-decoration: none;">+62
-                                813-8000-4443</a>
-                        </li>
-                        <li>
-                            <strong style="min-width: 120px;"><i class="fas fa-envelope" style="margin-right: 8px;"></i>
-                                Email:</strong>
-                            <a href="mailto:yulison47@gmail.com"
-                                style="color: #fff; text-decoration: none;">yulison47@gmail.com</a>
-                        </li>
-                    </ul>
-
-                </div>
-
-                <!-- 9. Foto -->
-                <div id="content-photo" class="hidden-content">
-                    <h2 data-i18n="photo_header">Foto Profesional</h2>
-                    <div class="photo-container" style="text-align: center;">
-                        <img src="profile.jpg" alt="Yopi Son Haji"
-                            style="width: 200px; height: 200px; border-radius: 20px; border: 4px solid var(--accent-color); object-fit: cover; box-shadow: 0 0 20px rgba(0,255,136,0.3);">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Interactive Menu Grid -->
-            <nav class="menu-grid">
-                <div class="menu-item" data-target="identity">
-                    <div class="icon"><i class="fas fa-id-card"></i></div>
-                    <span data-i18n="menu_identity">Identitas</span>
-                </div>
-                <div class="menu-item" data-target="title">
-                    <div class="icon"><i class="fas fa-briefcase"></i></div>
-                    <span data-i18n="menu_position">Posisi</span>
-                </div>
-                <div class="menu-item" data-target="summary">
-                    <div class="icon"><i class="fas fa-user-circle"></i></div>
-                    <span data-i18n="menu_about">About</span>
-                </div>
-                <div class="menu-item" data-target="experience">
-                    <div class="icon"><i class="fas fa-building"></i></div>
-                    <span data-i18n="menu_experience">Experience</span>
-                </div>
-                <div class="menu-item" data-target="education">
-                    <div class="icon"><i class="fas fa-graduation-cap"></i></div>
-                    <span data-i18n="menu_education">Education</span>
-                </div>
-                <div class="menu-item" data-target="skills">
-                    <div class="icon"><i class="fas fa-code"></i></div>
-                    <span data-i18n="menu_skills">Skills</span>
-                </div>
-                <div class="menu-item" data-target="achievements">
-                    <div class="icon"><i class="fas fa-trophy"></i></div>
-                    <span data-i18n="menu_achievement">Achievement</span>
-                </div>
-                <div class="menu-item" data-target="portfolio">
-                    <div class="icon"><i class="fas fa-share-alt"></i></div>
-                    <span data-i18n="menu_contact">Contact</span>
-                </div>
-                <div class="menu-item" data-target="photo">
-                    <div class="icon"><i class="fas fa-camera"></i></div>
-                    <span data-i18n="menu_photo">Foto</span>
-                </div>
-            </nav>
-
-            <!-- Mobile Download Button & Portfolio Launcher (Moved Together) -->
-            <div
-                style="margin-top: auto; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 20px;">
-                <!-- Download Button (Mobile Position: Above Certs / Desktop: Bottom Left) -->
-                <button onclick="window.print()" class="btn-download" id="download-btn">
-                    <i class="fas fa-file-download"></i> Download CV
-                </button>
-
-                <!-- Portfolio Launcher -->
-                <div class="portfolio-launcher">
-                    <a href="certificates.html" target="_blank" class="btn-portfolio cert-btn">
-                        <span class="btn-text" data-i18n="btn_certificates">Lihat Sertifikat & Penghargaan</span>
-                        <span class="btn-glitch"></span>
-                    </a>
-
-                    <a href="portfolio.html" target="_blank" class="btn-portfolio">
-                        <span class="btn-text" data-i18n="btn_portfolio">Buka Portofolio Project</span>
-                        <span class="btn-glitch"></span>
-                    </a>
-                </div>
-            </div>
-
+    <!-- Loading Screen -->
+    <div class="loader-container" id="loader">
+        <div class="loader-logo">
+            <div class="spinner"></div>
+            <span>SATUJALAN</span>
         </div>
     </div>
+
+    <!-- Background Elements -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="logo.jpg" alt="SatuJalan Logo" class="logo-img">
+                <span class="logo-text">SATU<span class="highlight">JALAN</span></span>
+            </a>
+
+            <button class="mobile-toggle" id="mobile-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Beranda</a></li>
+                <li class="nav-item"><a href="#hardware" class="nav-link">Hardware</a></li>
+                <li class="nav-item"><a href="#software" class="nav-link">Software</a></li>
+                <li class="nav-item"><a href="#coverage" class="nav-link">Area Layanan</a></li>
+                <li class="nav-item"><a href="https://wa.me/6282138004443" class="nav-btn-mobile">Hubungi Kami</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content" data-aos="fade-up">
+                <div class="badge-pill">🚀 Layanan 24 Jam Jabodetabek</div>
+                <h1 class="hero-title">Satu Jalan, <span class="gradient-text">Semua Solusi</span></h1>
+                <p class="hero-subtitle">
+                    <span id="subtitle-text">Instal ulang Windows dengan biaya Seiklasnya. Didukung solusi teknis
+                        menyeluruh dari hardware hingga software, tanpa ribet—kami datang ke lokasi Anda.</span>
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="https://wa.me/6282138004443?text=Halo%20SatuJalan,%20saya%20butuh%20bantuan%20hardware"
+                        class="btn btn-primary glow-effect">
+                        <i class="fas fa-wrench"></i> Servis Hardware
+                    </a>
+                    <a href="https://wa.me/6282138004443?text=Halo%20SatuJalan,%20saya%20tertarik%20pembuatan%20software/web"
+                        class="btn btn-secondary">
+                        <i class="fas fa-code"></i> Buat Software
+                    </a>
+                    <a href="#" class="btn btn-accent" id="btn-download">
+                        <i class="fas fa-download"></i> Jasa Download
+                    </a>
+                </div>
+
+                <div class="partner-badge glow-border">
+                    <span class="partner-text">Official Collaboration with</span>
+                    <div class="partner-logo-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Envato_Elements_Icon.svg/1024px-Envato_Elements_Icon.svg.png"
+                            alt="Envato Elements" class="partner-logo">
+                        <span class="partner-brand">envato<span class="highlight-green">elements</span></span>
+                    </div>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">24/7</span>
+                        <span class="stat-label">Siap Panggil</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num">1 Jam</span>
+                        <span class="stat-label">Estimasi Tiba</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num">4.9⭐</span>
+                        <span class="stat-label">Rating Teknisi</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual" data-aos="fade-left">
+                <!-- Abstract Futuristic Visual using CSS/SVG -->
+                <div class="tech-circle">
+                    <div class="circle-inner"></div>
+                    <div class="floating-icon icon-1"><i class="fas fa-laptop-code"></i></div>
+                    <div class="floating-icon icon-2"><i class="fas fa-microchip"></i></div>
+                    <div class="floating-icon icon-3"><i class="fas fa-mobile-alt"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hardware Services -->
+    <section id="hardware" class="services">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">ON-SITE SERVICE</span>
+                <h2 class="section-title">Solusi <span class="highlight-blue">Hardware</span></h2>
+                <p class="section-desc">Teknisi profesional kami datang langsung ke rumah atau kantor Anda.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card glass-card">
+                    <div class="card-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Reparasi & Servis</h3>
+                    <p>Perbaikan PC, Laptop, Printer yang rusak atau bermasalah.</p>
+                    <ul class="card-list">
+                        <li><i class="fas fa-check"></i> Mati Total</li>
+                        <li><i class="fas fa-check"></i> Ganti LCD/Baterai</li>
+                        <li><i class="fas fa-check"></i> Keyboard Error</li>
+                    </ul>
+                </div>
+                <div class="service-card glass-card">
+                    <div class="card-icon"><i class="fas fa-broom"></i></div>
+                    <h3>Maintenance</h3>
+                    <p>Perawatan berkala agar perangkat tetap optimal dan awet.</p>
+                    <ul class="card-list">
+                        <li><i class="fas fa-check"></i> Pembersihan Debu</li>
+                        <li><i class="fas fa-check"></i> Ganti Thermal Paste</li>
+                        <li><i class="fas fa-check"></i> Cable Management</li>
+                    </ul>
+                </div>
+                <div class="service-card glass-card">
+                    <div class="card-icon"><i class="fas fa-save"></i></div>
+                    <h3>Data Recovery</h3>
+                    <p>penyelamatan data penting dari harddisk atau storage rusak.</p>
+                    <ul class="card-list">
+                        <li><i class="fas fa-check"></i> HDD/SSD Corrupt</li>
+                        <li><i class="fas fa-check"></i> File Terhapus</li>
+                        <li><i class="fas fa-check"></i> Backup System</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Services -->
+    <section id="software" class="services section-dark">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">DIGITAL SOLUTIONS</span>
+                <h2 class="section-title">Solusi <span class="highlight-purple">Software</span></h2>
+                <p class="section-desc">Transformasi ide bisnis Anda menjadi produk digital modern.</p>
+            </div>
+
+            <div class="services-row">
+                <div class="feature-box">
+                    <div class="feature-content">
+                        <h3>Web Development</h3>
+                        <p>Website company profile, toko online, hingga sistem informasi custom dengan desain premium.
+                        </p>
+                    </div>
+                    <div class="feature-visual">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-content">
+                        <h3>Mobile Apps</h3>
+                        <p>Aplikasi Android & iOS yang responsif dan user-friendly untuk kebutuhan bisnis.</p>
+                    </div>
+                    <div class="feature-visual">
+                        <i class="fas fa-mobile-screen"></i>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-content">
+                        <h3>Design & Multimedia</h3>
+                        <p>UI/UX Design, Logo, Video Editing, dan aset digital untuk branding.</p>
+                    </div>
+                    <div class="feature-visual">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Area -->
+    <section id="coverage" class="coverage">
+        <div class="container">
+            <div class="coverage-wrapper glass-card">
+                <div class="coverage-text">
+                    <h2>Area Layanan Kami</h2>
+                    <p>Kami melayani panggilan ke seluruh wilayah <strong>JABODETABEK</strong> dengan perhitungan biaya
+                        transport yang transparan.</p>
+                    <div class="area-tags">
+                        <span class="tag">Jakarta</span>
+                        <span class="tag">Bogor</span>
+                        <span class="tag">Depok</span>
+                        <span class="tag">Tangerang</span>
+                        <span class="tag">Bekasi</span>
+                    </div>
+                    <div class="pricing-info">
+                        <i class="fas fa-calculator"></i>
+                        <span>Transport Fee: Base Rp 10rb + Tarip per KM (Sesuai App Ojol)</span>
+                    </div>
+                </div>
+                <div class="coverage-map-visual">
+                    <i class="fas fa-map-marked-alt big-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container cta-container center">
+            <h2>Butuh Bantuan Sekarang?</h2>
+            <p>Teknisi kami siap meluncur ke lokasi Anda.</p>
+            <a href="https://wa.me/6282138004443" class="btn btn-primary btn-lg pulse-anim">
+                <i class="fab fa-whatsapp"></i> Chat WhatsApp Sekarang
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>SATU<span class="highlight">JALAN</span></h3>
+                <p>"Satu Jalan, Semua Solusi"</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Layanan</h4>
+                <a href="#hardware">Servis Komputer</a>
+                <a href="#hardware">Install Ulang</a>
+                <a href="#software">Bikin Website</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Kontak</h4>
+                <p><i class="fab fa-whatsapp"></i> 0821-3800-4443</p>
+                <p><i class="far fa-envelope"></i> admin@satujalan.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Jabodetabek Area</p>
+            </div>
+        </div>
+        <div class="footer-bottom center">
+            <p>&copy; 2026 SatuJalan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Form Booking Layanan</h2>
+                <p>Isi data untuk estimasi biaya & terhubung ke WhatsApp teknisi.</p>
+            </div>
+
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="serviceType">Jenis Layanan</label>
+                    <select id="serviceType" required>
+                        <option value="Hardware - Reparasi">Reparasi Hardware</option>
+                        <option value="Hardware - Maintenance">Maintenance / Cleaning</option>
+                        <option value="Software - Install Ulang">Install Ulang Windows/Software</option>
+                        <option value="Software - Data Recovery">Data Recovery</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="deviceType">Detail Perangkat / Masalah</label>
+                    <input type="text" id="deviceType" placeholder="Contoh: Laptop Asus Mati Total" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">Lokasi (Kota) / GPS</label>
+                    <select id="city" required>
+                        <option value="">Pilih Kota...</option>
+                        <option value="Jakarta">Jakarta (Base Rate)</option>
+                        <option value="Depok">Depok (+Rp 25rb Transport)</option>
+                        <option value="Bogor">Bogor (+Rp 35rb Transport)</option>
+                        <option value="Tangerang">Tangerang (+Rp 25rb Transport)</option>
+                        <option value="Bekasi">Bekasi (+Rp 30rb Transport)</option>
+                        <option value="GPS">📍 Gunakan GPS (Akurat)</option>
+                        <option value="Lainnya">Lainnya (Luar Jabodetabek)</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="gps-group" style="display: none;">
+                    <button type="button" id="btn-location" class="btn btn-secondary full-width"
+                        style="margin-bottom: 10px; border-color: var(--primary); color: var(--primary);">
+                        <i class="fas fa-map-marker-alt"></i> Ambil Lokasi Saya
+                    </button>
+                    <p id="location-status" style="font-size: 0.8rem; color: var(--text-muted); text-align: center;">
+                        Lokasi belum diambil.</p>
+                    <input type="hidden" id="user-lat">
+                    <input type="hidden" id="user-long">
+                    <input type="hidden" id="calc-distance">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Alamat Lengkap</label>
+                    <textarea id="address" rows="3" placeholder="Jl. Contoh No. 123, Kelurahan..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="bookingTime">Kapan Anda Butuh?</label>
+                    <select id="bookingTime" required>
+                        <option value="ASAP (Secepatnya)">ASAP (Secepatnya)</option>
+                        <option value="Hari Ini">Hari Ini</option>
+                        <option value="Besok">Besok</option>
+                        <option value="Jadwalkan Tanggal Lain">Jadwalkan Tanggal Lain</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Metode Pembayaran (Preferensi)</label>
+                    <div class="radio-group" style="display: flex; gap: 1rem; color: #fff;">
+                        <label><input type="radio" name="paymentMethod" value="Transfer" checked> Transfer</label>
+                        <label><input type="radio" name="paymentMethod" value="E-Wallet"> E-Wallet</label>
+                        <label><input type="radio" name="paymentMethod" value="COD/Tunai"> COD/Tunai</label>
+                    </div>
+                </div>
+
+                <!-- Live Estimation Box -->
+                <div class="estimation-box">
+                    <h4>Estimasi Biaya Awal</h4>
+                    <div class="est-row">
+                        <span>Layanan (Start from):</span>
+                        <span>Rp 150.000</span>
+                    </div>
+                    <div class="est-row">
+                        <span>Transport:</span>
+                        <span id="transportCost">Rp 0</span>
+                    </div>
+                    <div class="est-divider"></div>
+                    <div class="est-row total">
+                        <span>Estimasi Total:</span>
+                        <span id="totalCost">Rp 150.000</span>
+                    </div>
+                    <p class="note">*Biaya servis final ditentukan setelah pengecekan teknisi.</p>
+                </div>
+
+                <button type="submit" class="btn btn-primary full-width">
+                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <!-- Download Envato Modal -->
+    <div id="downloadModal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-modal close-download">&times;</span>
+            <div class="modal-header">
+                <h2>Jasa Download File Envato</h2>
+                <p>Dapatkan aset premium Envato dengan harga terjangkau (Mulai Rp 5rb/file).</p>
+            </div>
+
+            <form id="downloadForm">
+                <div class="form-group">
+                    <label for="envatoLink">Link File Envato</label>
+                    <input type="url" id="envatoLink" placeholder="https://elements.envato.com/..." required>
+                </div>
+
+                <div class="form-group">
+                    <label>Metode Pembayaran</label>
+                    <div class="radio-group" style="display: flex; gap: 1rem; color: #fff;">
+                        <label><input type="radio" name="dlPayment" value="Transfer" checked> Transfer</label>
+                        <label><input type="radio" name="dlPayment" value="E-Wallet"> E-Wallet</label>
+                        <label><input type="radio" name="dlPayment" value="QRIS"> QRIS</label>
+                    </div>
+                </div>
+
+                <div class="estimation-box">
+                    <h4>Harga: Mulai Rp 5.000 / File</h4>
+                    <p class="note" style="margin-top: 5px;">*Harga tergantung kurs & paket.</p>
+                </div>
+
+                <button type="submit" class="btn btn-accent full-width">
+                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Software Request Modal -->
+    <div id="softwareModal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-modal close-software">&times;</span>
+            <div class="modal-header">
+                <h2>Request Project Software</h2>
+                <p>Konsultasikan kebutuhan digital Anda. Kami akan buatkan proposal.</p>
+            </div>
+
+            <form id="softwareForm">
+                <div class="form-group">
+                    <label for="swServiceType">Jenis Layanan</label>
+                    <select id="swServiceType" required>
+                        <option value="Web Development">Web Development (Company/Toko)</option>
+                        <option value="Mobile App">Mobile App (Android/iOS)</option>
+                        <option value="UI/UX Design">UI/UX Design</option>
+                        <option value="Digital Assets">Digital Assets (Logo/Video)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="projectDesc">Deskripsi Project</label>
+                    <textarea id="projectDesc" rows="3" placeholder="Jelaskan fitur utama yang Anda butuhkan..."
+                        required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Range Budget</label>
+                    <select id="budget" required>
+                        <option value="< 5 Juta">Under 5 Juta</option>
+                        <option value="5 - 10 Juta">5 - 10 Juta</option>
+                        <option value="10 - 25 Juta">10 - 25 Juta</option>
+                        <option value="25 - 50 Juta">25 - 50 Juta</option>
+                        <option value="> 50 Juta">Sultan (> 50 Juta)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeline">Timeline (Deadline)</label>
+                    <input type="text" id="timeline" placeholder="Contoh: 1 Bulan / ASAP" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Butuh Pertemuan On-Site?</label>
+                    <div class="radio-group" style="display: flex; gap: 1rem; color: #fff;">
+                        <label><input type="radio" name="onsite" value="Ya" checked> Ya (Jabodetabek)</label>
+                        <label><input type="radio" name="onsite" value="Online Saja"> Remote / Online</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-secondary full-width">
+                    <i class="fab fa-whatsapp"></i> Kirim Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6282138004443" class="float-wa" target="_blank" title="Chat WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script src="script.js"></script>
 </body>
