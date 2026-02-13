@@ -97,15 +97,48 @@ body {
     .iphone-frame {
         width: 100vw;
         height: 100dvh;
+        border: none;
+        /* Remove border */
         border-radius: 0;
+        /* Remove radius */
+        box-shadow: none;
+        /* Remove shadow */
         padding: 0;
         animation: none;
+        background: transparent;
+        /* Remove background */
+    }
+
+    .bezel-outer {
+        border: none;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .screen {
+        border-radius: 0;
+        box-shadow: none;
+        height: 100%;
+        /* Ensure full height */
     }
 
     .dock {
         bottom: calc(20px + env(safe-area-inset-bottom));
         width: calc(100% - 40px);
         left: 20px;
+    }
+
+    /* Hide simulated UI on mobile to save space */
+    .status-bar,
+    .dynamic-island {
+        display: none !important;
+    }
+
+    /* Adjust padding for native mobile feel */
+    .home-screen {
+        padding-top: calc(20px + env(safe-area-inset-top));
+        padding-bottom: calc(180px + env(safe-area-inset-bottom));
+        /* Ensure bottom apps aren't covered */
     }
 }
 
