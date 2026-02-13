@@ -96,10 +96,16 @@ body {
 @media (max-width: 450px) {
     .iphone-frame {
         width: 100vw;
-        height: 100vh;
+        height: 100dvh;
         border-radius: 0;
         padding: 0;
         animation: none;
+    }
+
+    .dock {
+        bottom: calc(20px + env(safe-area-inset-bottom));
+        width: calc(100% - 40px);
+        left: 20px;
     }
 }
 
