@@ -94,51 +94,119 @@ body {
 }
 
 @media (max-width: 450px) {
+
+    /* === Native Scrolling Upgrade === */
+    body {
+        overflow-y: auto !important;
+        height: auto !important;
+        min-height: 100vh;
+        align-items: flex-start;
+        /* Align top */
+    }
+
+    .iphone-container {
+        height: auto !important;
+        min-height: 100vh;
+        overflow: visible;
+        display: block;
+    }
+
     .iphone-frame {
         width: 100vw;
-        height: 100dvh;
+        height: auto !important;
+        min-height: 100vh;
         border: none;
-        /* Remove border */
         border-radius: 0;
-        /* Remove radius */
         box-shadow: none;
-        /* Remove shadow */
         padding: 0;
         animation: none;
         background: transparent;
-        /* Remove background */
+        overflow: visible;
     }
 
     .bezel-outer {
         border: none;
         border-radius: 0;
         background: transparent;
+        overflow: visible;
+        height: auto !important;
+        min-height: 100vh;
     }
 
     .screen {
         border-radius: 0;
         box-shadow: none;
-        height: 100%;
-        /* Ensure full height */
+        height: auto !important;
+        min-height: 100vh;
+        overflow: visible !important;
     }
 
+    /* Fixed UI Elements */
     .dock {
-        bottom: calc(20px + env(safe-area-inset-bottom));
-        width: calc(100% - 40px);
+        position: fixed;
+        bottom: calc(30px + env(safe-area-inset-bottom));
         left: 20px;
+        width: calc(100% - 40px);
+        z-index: 9999;
     }
 
-    /* Hide simulated UI on mobile to save space */
-    .status-bar,
+    /* Sticky Header Elements */
+    .status-bar {
+        position: fixed;
+        top: 0;
+        z-index: 9998;
+        background: rgba(255, 255, 255, 0.5);
+        /* Slight visibility */
+        backdrop-filter: blur(10px);
+        display: flex !important;
+    }
+
     .dynamic-island {
-        display: none !important;
+        position: fixed;
+        top: 10px;
+        z-index: 10000;
+        display: flex !important;
     }
 
-    /* Adjust padding for native mobile feel */
+    /* Content Flow */
     .home-screen {
-        padding-top: calc(20px + env(safe-area-inset-top));
-        padding-bottom: calc(180px + env(safe-area-inset-bottom));
-        /* Ensure bottom apps aren't covered */
+        overflow: visible !important;
+        height: auto !important;
+        padding-top: 130px;
+        /* Clear Dynamic Island */
+        padding-bottom: 180px;
+        /* Clear Fixed Dock */
+    }
+
+    /* === Mobile App Modals: Native Slide-Up === */
+    .app-modal {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100dvh;
+        z-index: 20000 !important;
+        /* Above everything */
+        border-radius: 0 !important;
+        transform: translateY(100vh) scale(1) !important;
+        /* Start off-screen down, maintain scale 1 */
+        opacity: 1 !important;
+        transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1) !important;
+        overflow-y: auto;
+        /* Internal scrolling for the app */
+        padding-top: 50px;
+        /* Safe area for close button */
+    }
+
+    .app-modal.active {
+        transform: translateY(0) scale(1) !important;
+        /* Slide up to 0 */
+        border-radius: 0 !important;
+    }
+
+    /* Ensure content inside modal is readable */
+    .app-content-scroll {
+        padding-bottom: 100px;
     }
 }
 
