@@ -4,353 +4,605 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Yopi Son Haji (English)</title>
+    <title>CV - Yopi Son Haji (iPhone 16 Edition)</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Outfit:wght@300;500;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-    <div class="background-animation"></div>
+    <div class="iphone-container">
+        <div class="iphone-frame">
+            <div class="bezel-outer">
+                <div class="bezel-inner">
+                    <div class="screen">
 
-    <!-- Custom Cursor Elements -->
-    <div class="cursor-dot" data-cursor-dot></div>
-    <div class="cursor-outline" data-cursor-outline></div>
+                        <!-- Status Bar -->
+                        <div class="status-bar">
+                            <div class="time" id="status-time">09:41</div>
+                            <div class="dynamic-island">
+                                <div class="camera"></div>
+                                <div class="sensor"></div>
+                            </div>
+                            <div class="status-icons">
+                                <i class="fas fa-signal"></i>
+                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-battery-full"></i>
+                            </div>
+                        </div>
 
-    <div class="main-container">
-        <!-- Language Switcher -->
-        <div class="lang-switcher">
-            <button class="lang-btn" onclick="window.location.href='index.html'">ID</button>
-            <span class="divider">|</span>
-            <button class="lang-btn active" onclick="window.location.href='index_en.html'">EN</button>
-            <span class="divider">|</span>
-            <button class="lang-btn" onclick="window.location.href='index_ar.html'">AR</button>
-        </div>
+                        <!-- Home Screen -->
+                        <div class="home-screen" id="home-screen">
 
-        <!-- Header: Profile Summary -->
-        <header class="profile-header fade-in-down">
-            <h1>Yopi Son Haji</h1>
-            <p class="futuristic-role">Head of Media & Multimedia Producer | Web Developer</p>
-        </header>
+                            <!-- Widgets Area -->
+                            <div class="widgets-area">
+                                <div class="widget profile-widget" onclick="openApp('app-profile', event)">
+                                    <div class="widget-content">
+                                        <div class="profile-pic-small">
+                                            <img src="profile.jpg" alt="Profile">
+                                        </div>
+                                        <div class="profile-text">
+                                            <h3>Yopi Son Haji</h3>
+                                            <p>Head of Media</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget weather-widget"
+                                    onclick="window.open('https://www.google.com/maps/search/?api=1&query=MMGV%2BV63%2C+Dekat%2C+Jl.+H.+Nursad%2C+Ciater%2C+Kec.+Serpong%2C+Kota+Tangerang+Selatan%2C+Banten+15310', '_blank')">
+                                    <div class="widget-content">
+                                        <i class="fas fa-sun"></i>
+                                        <span>Tangsel</span>
+                                        <h3>32°</h3>
+                                    </div>
+                                </div>
+                            </div>
 
-        <!-- Main Content Area -->
-        <div class="content-wrapper">
+                            <!-- App Grid -->
+                            <div class="app-grid">
+                                <!-- App 1: About (Profile) -->
+                                <div class="app-icon" onclick="openApp('app-summary', event)">
+                                    <div class="icon-box gradient-blue">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <span>About</span>
+                                </div>
 
-            <!-- Dynamic Detail View -->
-            <div class="detail-view" id="detail-view">
-                <!-- Default Message / Summary Glimpse -->
-                <div class="detail-content default-message active">
-                    <img src="profile.jpg" alt="Profile"
-                        style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem; border: 2px solid #00ff88; object-fit: cover;">
-                    <h2>Profile Summary</h2>
-                    <p>Multimedia professional with over 10 years of experience in digital content production, media
-                        management, and visual branding.</p>
-                </div>
+                                <!-- App 2: Experience (Work) -->
+                                <div class="app-icon" onclick="openApp('app-experience', event)">
+                                    <div class="icon-box gradient-purple">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <span>Work</span>
+                                </div>
 
-                <!-- Hidden Content Sections -->
+                                <!-- App 3: Education (Edu) -->
+                                <div class="app-icon" onclick="openApp('app-education', event)">
+                                    <div class="icon-box gradient-orange">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <span>Edu</span>
+                                </div>
 
-                <!-- 1. Identity -->
-                <div id="content-identity" class="hidden-content">
-                    <ul class="info-list">
-                        <li><strong>Name:</strong> Yopi Son Haji</li>
-                        <li><strong>Age:</strong> <span>32 Years</span></li>
-                        <li><strong>Address:</strong> <span>South Jakarta, Indonesia</span></li>
-                        <li><strong>Status:</strong> <span>Married</span></li>
-                        <li><strong>License:</strong> A & C</li>
-                    </ul>
-                </div>
+                                <!-- App 4: Skills (Skills) -->
+                                <div class="app-icon" onclick="openApp('app-skills', event)">
+                                    <div class="icon-box gradient-green">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <span>Skills</span>
+                                </div>
 
-                <!-- 2. Position -->
-                <div id="content-title" class="hidden-content">
-                    <h2>Position</h2>
-                    <h3 class="highlight">Head of Media & Multimedia Producer</h3>
-                    <h3 class="highlight" style="font-size: 1.1rem; color: #00ccff;">Multimedia Expert & Web Developer
-                    </h3>
-                    <p>Leading the media and IT Support team at a private school in BSD, Tangerang to strengthen
-                        branding and increase institution visibility. Responsible for designing and executing
-                        communication strategies to introduce the school to a wider audience, focusing on increasing new
-                        student enrollment. Managing and developing effective digital content to boost engagement,
-                        awareness, and build stronger relationships with the community.</p>
-                </div>
+                                <!-- App 5: Achievements (Awards) -->
+                                <div class="app-icon" onclick="openApp('app-achievements', event)">
+                                    <div class="icon-box gradient-yellow">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <span>Awards</span>
+                                </div>
 
-                <!-- 3. About -->
-                <div id="content-summary" class="hidden-content">
-                    <h2>About Me</h2>
+                                <!-- App 6: Certificates (Link External) -->
+                                <a href="certificates.html" target="_blank" class="app-icon">
+                                    <div class="icon-box gradient-red">
+                                        <i class="fas fa-certificate"></i>
+                                    </div>
+                                    <span>Certs</span>
+                                </a>
 
-                    <p class="summary-lead">
-                        With over a <span class="neon-cyan">decade</span> of experience in the multimedia world,
-                        I have taken on key roles in developing stunning visual content and enhancing institutional
-                        branding through digital platforms, especially YouTube. As a dedicated individual with high
-                        technical skills in design and web development, I am determined to make a significant
-                        contribution to the company's creative and production teams.
-                    </p>
-                    <h4 class="summary-subhead">Key Expertise:</h4>
-                    <ul class="summary-points">
-                        <li>
-                            <i class="fas fa-caret-right"></i>
-                            <span><span class="neon-purple">Media Management</span>: Leading media teams and designing
-                                effective content strategies to increase visibility and engagement.</span>
-                        <li>
-                            <i class="fas fa-caret-right"></i>
-                            <span><span class="neon-green">YouTube Growth</span>: Managing and developing YouTube
-                                channels from early stages to achieving <span
-                                    class="highlight-text">monetization</span>.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-caret-right"></i>
-                            <span><span class="neon-blue">Content Production</span>: Directing high-quality content
-                                creation for television and digital platforms, ensuring consistent production
-                                standards.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-caret-right"></i>
-                            <span><span class="neon-pink">Technical Creative</span>: Mastering graphic design, video
-                                editing, and web development to create attractive and functional visual
-                                experiences.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-caret-right"></i>
-                            <span><span class="neon-cyan">AI Integration with Multimedia</span>: Integrating Artificial
-                                Intelligence (AI) with multimedia to ensure relevance and innovation that keeps up with
-                                the times.</span>
-                        </li>
-                    </ul>
-                </div>
+                                <!-- App 7: Portfolio (Link External) -->
+                                <a href="portfolio.html" target="_blank" class="app-icon">
+                                    <div class="icon-box gradient-cyan">
+                                        <i class="fas fa-images"></i>
+                                    </div>
+                                    <span>Portfolio</span>
+                                </a>
 
-                <!-- 4. Experience -->
-                <div id="content-experience" class="hidden-content">
-                    <h2>Work Experience</h2>
-                    <ul class="timeline">
-                        <li>
-                            <span class="date">2023 - Present</span>
-                            <h4>Head of Media</h4>
-                            <p><strong>Ibnu Abbas BSD</strong></p>
-                            <p class="job-desc">Responsible for planning, production, and distribution of digital
-                                content, managing the media team, and increasing engagement and institutional branding.
-                            </p>
-                        </li>
-                        <li>
-                            <span class="date">2017 - 2023</span>
-                            <h4>Producer & Production Manager</h4>
-                            <p><strong>Annab TV</strong></p>
-                            <p class="job-desc">Led TV & digital program production, crew management, and content
-                                quality control.</p>
-                        </li>
-                        <li>
-                            <span class="date">2015 - 2017</span>
-                            <h4>Cameraman & Editor</h4>
-                            <p><strong>Yayasan Sahabat Yamina</strong></p>
-                            <p class="job-desc">Camera operation and video editing for foundation content.</p>
-                        </li>
-                    </ul>
-                </div>
+                                <!-- App 8: Settings (Language/Theme) -->
+                                <div class="app-icon" onclick="openApp('app-settings', event)">
+                                    <div class="icon-box gradient-gray">
+                                        <i class="fas fa-cog"></i>
+                                    </div>
+                                    <span>Settings</span>
+                                </div>
+                            </div>
 
-                <!-- 5. Education -->
-                <div id="content-education" class="hidden-content">
-                    <h2>Education</h2>
-                    <div class="edu-item">
-                        <i class="fas fa-university" style="color: var(--accent-color); margin-bottom: 0.5rem;"></i>
-                        <h4>Bachelor of Informatics Engineering</h4>
-                        <p>Pamulang University</p>
-                        <p class="date">2022 - Present</p>
-                    </div>
-                    <div class="edu-item" style="margin-top: 15px;">
-                        <i class="fas fa-university" style="color: var(--accent-color); margin-bottom: 0.5rem;"></i>
-                        <h4>Bachelor of Arabic Literature</h4>
-                        <p>Al-Mawa Cileungsi</p>
-                        <p class="date">2022 - Present</p>
-                    </div>
-                </div>
+                            <!-- Dock -->
+                            <div class="dock">
+                                <div class="dock-blur"></div>
+                                <div class="app-icon"
+                                    onclick="window.open('https://wa.me/6281380004443?text=Assalamu%E2%80%99alaikum%20Warahmatullahi%20Wabarakatuh%2C%0A%0AHello%2C%20how%20are%20you%3F%20I%20hope%20you%20are%20doing%20well.%0A%0AMy%20name%20is%20%5BYour%20Name%5D.%20I%20have%20just%20reviewed%20your%20CV%2C%20and%20I%20must%20say%20I%20am%20very%20impressed%20with%20your%20background%20and%20expertise.%0A%0AI%20believe%20there%20is%20great%20potential%20for%20us%20to%20work%20together.%20Would%20you%20happen%20to%20have%20some%20time%20soon%3F%20I%20would%20love%20to%20have%20a%20discussion%20with%20you.', '_blank')">
+                                    <div class="icon-box green-phone">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                </div>
+                                <div class="app-icon" onclick="window.location.href='mailto:yulison47@gmail.com'">
+                                    <div class="icon-box blue-mail">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                </div>
+                                <div class="app-icon" onclick="openApp('app-contact', event)">
+                                    <div class="icon-box dark-contact">
+                                        <i class="fas fa-address-book"></i>
+                                    </div>
+                                </div>
+                                <div class="app-icon" onclick="window.open('https://h7.cl/1h-0q', '_blank')">
+                                    <div class="icon-box black-github">
+                                        <i class="fab fa-github"></i>
+                                    </div>
+                                </div>
+                            </div>
 
-                <!-- 6. Skills -->
-                <div id="content-skills" class="hidden-content">
-                    <h2>Technical Skills</h2>
+                            <!-- Home Indicator -->
+                            <div class="home-indicator"></div>
+                        </div>
 
-                    <ul class="summary-points" style="margin-top: 15px;">
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-purple">Adobe Creative Cloud Expertise</span>: Deep expertise in
-                                Adobe Premiere Pro, Photoshop, and other graphic design & video editing tools on both
-                                macOS and Windows.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-cyan">Programming Skills</span>: Mastering web development using
-                                <span class="highlight-text"><i class="fab fa-html5"></i> HTML</span>,
-                                <span class="highlight-text"><i class="fab fa-css3-alt"></i> CSS</span>,
-                                <span class="highlight-text"><i class="fab fa-php"></i> PHP</span>, and
-                                <span class="highlight-text"><i class="fab fa-js"></i> JavaScript</span> with
-                                <span class="highlight-text"><i class="fas fa-file-code"></i> Visual Studio Code</span>
-                                as the development environment.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-green">Technical Maintenance & Repair</span>: Expert in maintenance
-                                and troubleshooting of PC and laptop devices, covering software and hardware on Windows
-                                and macOS.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-blue">Data Recovery</span>: Superior ability to recover formatted or
-                                lost data from various storage media with efficient and safe techniques.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-pink">Software Installation & Troubleshooting</span>: Skilled in
-                                software installation and troubleshooting to resolve various issues related to major
-                                operating systems.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-cyan">Technical Innovation</span>: Committed to providing creative
-                                solutions in the technology field, increasing productivity, and driving technical
-                                innovation.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="highlight-text">Live Streaming</span>: Over 500 hours of experience in
-                                organizing live streams, using software such as Wirecast, vMix, OBS, and Prism Live
-                                Studio.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-purple">Creative AI Prompt Design</span>: Technical ability to <span
-                                    class="highlight-text">design structured and creative prompts</span> to generate
-                                effective and purpose-driven AI-based multimedia content.</span>
-                        </li>
-                    </ul>
-                </div>
+                        <!-- === APPS (MODALS) === -->
 
-                <!-- 7. Achievements -->
-                <div id="content-achievements" class="hidden-content">
-                    <h2>Awards & Achievements</h2>
-                    <ul class="achievement-list">
-                        <li><i class="fas fa-tasks"></i> <span>Led and managed media teams in producing high-quality TV
-                                and digital content, with efficient project timeline management.</span>
-                        </li>
-                        <li><i class="fab fa-youtube"></i> <span>Developed and managed several YouTube channels from
-                                zero to monetization through consistent and targeted branding strategies.</span></li>
-                        <li><i class="fas fa-chart-line"></i> <span>Significantly contributed to increasing engagement
-                                and brand awareness through strategic and audience-based content planning.</span></li>
-                        <li><i class="fas fa-lightbulb"></i> <span>Initiated innovation in production techniques and
-                                visual narrative to raise the team's creativity standards and technical
-                                capabilities.</span></li>
-                    </ul>
-                </div>
+                        <!-- App: Profile (Identity & Position) -->
+                        <div class="app-modal" id="app-profile">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>Profile</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="profile-large-view">
+                                    <img src="profile.jpg" alt="Profile">
+                                    <h2>Yopi Son Haji</h2>
+                                    <p style="margin-top: 5px;">Head of Media & Multimedia Producer</p>
+                                    <p style="font-size: 0.9em; color: var(--ios-blue);">Multimedia Expert & Web
+                                        Developer</p>
+                                </div>
+                                <div class="ios-list-block">
+                                    <div class="list-title">Personal Information</div>
+                                    <div class="ios-item">
+                                        <span class="label">Name</span>
+                                        <span class="value">Yopi Son Haji</span>
+                                    </div>
+                                    <div class="ios-item">
+                                        <span class="label">Age</span>
+                                        <span class="value">32 Years</span>
+                                    </div>
+                                    <div class="ios-item">
+                                        <span class="label">Address</span>
+                                        <span class="value" style="text-align: right; max-width: 60%;">Cipete
+                                            Selatan,<br>South Jakarta, Indonesia</span>
+                                    </div>
+                                    <div class="ios-item">
+                                        <span class="label">Status</span>
+                                        <span class="value">Married</span>
+                                    </div>
+                                    <div class="ios-item">
+                                        <span class="label">License</span>
+                                        <span class="value">A & C</span>
+                                    </div>
+                                </div>
 
-                <!-- 8. Portfolio/Contact -->
-                <div id="content-portfolio" class="hidden-content">
-                    <h2>Social Media & Contact</h2>
-                    <ul class="info-list">
-                        <li>
-                            <strong style="min-width: 120px;"><i class="fab fa-twitter" style="margin-right: 8px;"></i>
-                                X:</strong>
-                            <span>yopi son haji</span>
-                        </li>
-                        <li>
-                            <strong style="min-width: 120px;"><i class="fab fa-github" style="margin-right: 8px;"></i>
-                                GitHub:</strong>
-                            <a href="https://h7.cl/1h-0q" target="_blank"
-                                style="color: #fff; text-decoration: none;">GitHub Link</a>
-                        </li>
-                        <li>
-                            <strong style="min-width: 120px;"><i class="fab fa-linkedin" style="margin-right: 8px;"></i>
-                                LinkedIn:</strong>
-                            <a href="http://tiny.cc/957mxz" target="_blank"
-                                style="color: #fff; text-decoration: none;">LinkedIn Link</a>
-                        </li>
-                        <li>
-                            <strong style="min-width: 120px;"><i class="fas fa-phone-alt"
-                                    style="margin-right: 8px;"></i> Phone:</strong>
-                            <a href="tel:+6281380004443" style="color: #fff; text-decoration: none;">+62
-                                813-8000-4443</a>
-                        </li>
-                        <li>
-                            <strong style="min-width: 120px;"><i class="fas fa-envelope" style="margin-right: 8px;"></i>
-                                Email:</strong>
-                            <a href="mailto:yulison47@gmail.com"
-                                style="color: #fff; text-decoration: none;">yulison47@gmail.com</a>
-                        </li>
-                    </ul>
+                                <div class="ios-list-block">
+                                    <div class="list-title">Profile Summary</div>
+                                    <div class="ios-item-block" style="display: block;">
+                                        <p style="font-size: 14px; line-height: 1.5; color: var(--text-primary);">
+                                            Multimedia professional with over 10 years of experience in digital content
+                                            production, media management, and visual branding development.
+                                        </p>
+                                    </div>
+                                </div>
 
-                </div>
+                                <div class="ios-list-block">
+                                    <div class="list-title">Position Description</div>
+                                    <div class="ios-item-block" style="display: block;">
+                                        <p style="font-size: 14px; line-height: 1.5; color: var(--text-primary);">
+                                            Leading the media and IT Support team at a Private School in BSD, Tangerang
+                                            to strengthen branding and increase institutional visibility. Responsible
+                                            for designing and executing communication strategies to introduce the school
+                                            to a wider audience, focusing on increasing new student enrollment. Managing
+                                            and developing effective digital content to boost engagement, awareness, and
+                                            build stronger relationships with the community.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                <!-- 9. Photo -->
-                <div id="content-photo" class="hidden-content">
-                    <h2>Professional Photo</h2>
-                    <div class="photo-container" style="text-align: center;">
-                        <img src="profile.jpg" alt="Yopi Son Haji"
-                            style="width: 200px; height: 200px; border-radius: 20px; border: 4px solid var(--accent-color); object-fit: cover; box-shadow: 0 0 20px rgba(0,255,136,0.3);">
-                    </div>
-                </div>
-            </div>
+                        <!-- App: About Summary -->
+                        <div class="app-modal" id="app-summary">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>About Me</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="content-padding">
+                                    <p class="body-text">
+                                        With over <strong>a decade</strong> of experience in the multimedia world, I
+                                        have taken on key roles in developing stunning visual content and enhancing
+                                        institutional branding through digital platforms, especially YouTube. As a
+                                        dedicated individual with high technical skills in web design and development, I
+                                        am determined to make significant contributions to the company's creative and
+                                        production teams.
+                                    </p>
 
-            <!-- Interactive Menu Grid -->
-            <nav class="menu-grid">
-                <div class="menu-item" data-target="identity">
-                    <div class="icon"><i class="fas fa-id-card"></i></div>
-                    <span>Identity</span>
-                </div>
-                <div class="menu-item" data-target="title">
-                    <div class="icon"><i class="fas fa-briefcase"></i></div>
-                    <span>Position</span>
-                </div>
-                <div class="menu-item" data-target="summary">
-                    <div class="icon"><i class="fas fa-user-circle"></i></div>
-                    <span>About</span>
-                </div>
-                <div class="menu-item" data-target="experience">
-                    <div class="icon"><i class="fas fa-building"></i></div>
-                    <span>Experience</span>
-                </div>
-                <div class="menu-item" data-target="education">
-                    <div class="icon"><i class="fas fa-graduation-cap"></i></div>
-                    <span>Education</span>
-                </div>
-                <div class="menu-item" data-target="skills">
-                    <div class="icon"><i class="fas fa-code"></i></div>
-                    <span>Skills</span>
-                </div>
-                <div class="menu-item" data-target="achievements">
-                    <div class="icon"><i class="fas fa-trophy"></i></div>
-                    <span>Awards</span>
-                </div>
-                <div class="menu-item" data-target="portfolio">
-                    <div class="icon"><i class="fas fa-share-alt"></i></div>
-                    <span>Contact</span>
-                </div>
-                <div class="menu-item" data-target="photo">
-                    <div class="icon"><i class="fas fa-camera"></i></div>
-                    <span>Photo</span>
-                </div>
-            </nav>
+                                    <h3 class="section-title">Key Expertise</h3>
+                                    <div class="ios-list">
+                                        <div class="ios-item" style="display: block; padding: 12px 16px;">
+                                            <h4 style="color: #5e5ce6;"><i class="fas fa-tasks"
+                                                    style="margin-right:8px;"></i>Media Management</h4>
+                                            <p>Leading media teams and designing effective content strategies to
+                                                increase visibility and engagement.</p>
+                                        </div>
+                                        <div class="ios-item" style="display: block; padding: 12px 16px;">
+                                            <h4 style="color: #ff0000;"><i class="fab fa-youtube"
+                                                    style="margin-right:8px;"></i>YouTube Growth</h4>
+                                            <p>Managing and growing YouTube channels from the early stages to
+                                                monetization.</p>
+                                        </div>
+                                        <div class="ios-item" style="display: block; padding: 12px 16px;">
+                                            <h4 style="color: #007aff;"><i class="fas fa-photo-video"
+                                                    style="margin-right:8px;"></i>Content Production</h4>
+                                            <p>Directing high-quality content creation for television and digital
+                                                platforms, ensuring consistent production standards.</p>
+                                        </div>
+                                        <div class="ios-item" style="display: block; padding: 12px 16px;">
+                                            <h4 style="color: #ff2d55;"><i class="fas fa-pencil-ruler"
+                                                    style="margin-right:8px;"></i>Technical Creative</h4>
+                                            <p>Mastering graphic design, video editing, and web development to create
+                                                engaging and functional visual experiences.</p>
+                                        </div>
+                                        <div class="ios-item" style="display: block; padding: 12px 16px;">
+                                            <h4 style="color: #00c7be;"><i class="fas fa-robot"
+                                                    style="margin-right:8px;"></i>AI Integration with Multimedia</h4>
+                                            <p>Integrating artificial intelligence (AI) with multimedia to ensure
+                                                relevance and innovation that keeps up with the times.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <!-- Buttons -->
-            <div
-                style="margin-top: auto; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 20px;">
-                <button onclick="window.print()" class="btn-download" id="download-btn">
-                    <i class="fas fa-file-download"></i> Download CV
-                </button>
+                        <!-- App: Experience -->
+                        <div class="app-modal" id="app-experience">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>Work Experience</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="timeline-container">
+                                    <!-- Job 1 -->
+                                    <div class="timeline-item">
+                                        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                                        <div class="timeline-content">
+                                            <span class="date">2023 - Present</span>
+                                            <h3>Head of Media</h3>
+                                            <h4>Ibnu Abbas BSD</h4>
+                                            <p>Responsible for planning, producing, and distributing digital content,
+                                                managing the media team, and enhancing institutional engagement and
+                                                branding.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Job 2 -->
+                                    <div class="timeline-item">
+                                        <div class="timeline-icon"><i class="fas fa-tv"></i></div>
+                                        <div class="timeline-content">
+                                            <span class="date">2017 - 2023</span>
+                                            <h3>Producer & Production Manager</h3>
+                                            <h4>Annab TV</h4>
+                                            <p>Leading TV & digital program production, crew management, and content
+                                                quality control.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Job 3 -->
+                                    <div class="timeline-item">
+                                        <div class="timeline-icon"><i class="fas fa-video"></i></div>
+                                        <div class="timeline-content">
+                                            <span class="date">2015 - 2017</span>
+                                            <h3>Cameraman & Editor</h3>
+                                            <h4>Yayasan Sahabat Yamina</h4>
+                                            <p>Camera operation and video editing for foundation content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="portfolio-launcher">
-                    <a href="certificates.html" target="_blank" class="btn-portfolio cert-btn">
-                        <span class="btn-text">View Certificates & Awards</span>
-                        <span class="btn-glitch"></span>
-                    </a>
+                        <!-- App: Education -->
+                        <div class="app-modal" id="app-education">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>Education</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="ios-list-block">
+                                    <div class="list-title">Universitas Pamulang</div>
+                                    <div class="ios-item-block">
+                                        <div class="icon-col"><i class="fas fa-graduation-cap"
+                                                style="color:#007aff;"></i></div>
+                                        <div class="text-col">
+                                            <h3>B.Eng Informatics</h3>
+                                            <span class="meta">2022 - Present</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ios-list-block">
+                                    <div class="list-title">Al-Mawa Cilengsi</div>
+                                    <div class="ios-item-block">
+                                        <div class="icon-col"><i class="fas fa-book" style="color:#ff9500;"></i></div>
+                                        <div class="text-col">
+                                            <h3>B.A Arabic Literature</h3>
+                                            <span class="meta">2022 - Present</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <a href="portfolio.html" target="_blank" class="btn-portfolio">
-                        <span class="btn-text">Open Project Portfolio</span>
-                        <span class="btn-glitch"></span>
-                    </a>
-                </div>
-            </div>
+                        <!-- App: Skills -->
+                        <div class="app-modal" id="app-skills">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>Technical Skills</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="ios-list-block">
+                                    <div class="list-title">Expertise</div>
 
-        </div>
-    </div>
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fab fa-adobe" style="color: #ff2d55; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Adobe Creative Cloud
+                                                Expertise</strong>
+                                        </div>
+                                        <p>Deeply mastering the use of
+                                            <span class="highlight-text"><i class="fas fa-file-video"
+                                                    style="color: #9999cc;"></i> Adobe Premiere Pro</span>,
+                                            <span class="highlight-text"><i class="fas fa-file-image"
+                                                    style="color: #31a8ff;"></i> Photoshop</span>,
+                                            and other graphic design and video editing tools, both on
+                                            <span class="highlight-text"><i class="fab fa-apple"
+                                                    style="color: #ffffff;"></i> macOS</span> and
+                                            <span class="highlight-text"><i class="fab fa-windows"
+                                                    style="color: #00a4ef;"></i> Windows</span>.
+                                        </p>
+                                    </div>
 
-    <!-- Script: Removed i18n logic dependency for this static page, but kept for UI interactions -->
-    <script src="script.js"></script>
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fas fa-code" style="color: #007aff; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Programming Skills</strong>
+                                        </div>
+                                        <p>Mastering web development using
+                                            <span class="highlight-text"><i class="fab fa-html5"
+                                                    style="color: #e34c26;"></i> HTML</span>,
+                                            <span class="highlight-text"><i class="fab fa-css3-alt"
+                                                    style="color: #264de4;"></i> CSS</span>,
+                                            <span class="highlight-text"><i class="fab fa-php"
+                                                    style="color: #777bb4;"></i> PHP</span>, and
+                                            <span class="highlight-text"><i class="fab fa-js"
+                                                    style="color: #f0db4f;"></i> JavaScript</span> with
+                                            <span class="highlight-text"><i class="fas fa-file-code"
+                                                    style="color: #007acc;"></i> Visual Studio Code</span>
+                                            as the development environment.
+                                        </p>
+                                    </div>
+
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fas fa-tools" style="color: #8e8e93; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Maintenance & Repair</strong>
+                                        </div>
+                                        <p>Expert in PC and laptop maintenance and troubleshooting, covering software
+                                            and hardware on
+                                            <span class="highlight-text"><i class="fab fa-windows"
+                                                    style="color: #00a4ef;"></i> Windows</span> and
+                                            <span class="highlight-text"><i class="fab fa-apple"
+                                                    style="color: #ffffff;"></i> macOS</span> operating systems.
+                                        </p>
+                                    </div>
+
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fas fa-hdd" style="color: #ff9500; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Data Recovery</strong>
+                                        </div>
+                                        <p>Possessing superior aptitude in recovering formatted or lost data from
+                                            various storage media using efficient and secure techniques.</p>
+                                    </div>
+
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fas fa-compact-disc"
+                                                style="color: #34c759; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Installation &
+                                                Troubleshooting</strong>
+                                        </div>
+                                        <p>Skilled in software installation and troubleshooting to resolve various
+                                            issues related to major operating systems.</p>
+                                    </div>
+
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fas fa-lightbulb" style="color: #ffd60a; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Technical Innovation</strong>
+                                        </div>
+                                        <p>Committed to providing creative solutions in technology, increasing
+                                            productivity, and driving technical innovation.</p>
+                                    </div>
+
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fas fa-broadcast-tower"
+                                                style="color: #ff2d55; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Live Streaming</strong>
+                                        </div>
+                                        <p>Experienced over 500 hours in conducting live streaming, using various
+                                            software such as
+                                            <span class="highlight-text"><i class="fas fa-video"
+                                                    style="color: #ff2d55;"></i> Wirecast</span>,
+                                            <span class="highlight-text"><i class="fas fa-play-circle"
+                                                    style="color: #ff9500;"></i> vMix</span>,
+                                            <span class="highlight-text"><i class="fas fa-video"
+                                                    style="color: #ffffff;"></i> OBS</span>, and
+                                            <span class="highlight-text"><i class="fas fa-mobile-alt"
+                                                    style="color: #34c759;"></i> Prism Live Studio</span>.
+                                        </p>
+                                    </div>
+
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fas fa-brain" style="color: #bf5af2; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Creative AI Prompt
+                                                Design</strong>
+                                        </div>
+                                        <p>Technical ability to design structured and creative prompts to generate
+                                            effective and purpose-driven AI-based multimedia content.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- App: Achievements -->
+                        <div class="app-modal" id="app-achievements">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>Awards</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="ios-list">
+                                    <div class="ios-item">
+                                        <i class="fas fa-star"
+                                            style="color: #ffd60a; margin-right: 12px; font-size: 1.2em;"></i>
+                                        <div class="text-wrap">Led and managed media teams in high-quality TV and
+                                            digital content production, with efficient project timeline management.
+                                        </div>
+                                    </div>
+                                    <div class="ios-item">
+                                        <i class="fab fa-youtube"
+                                            style="color: #ff0000; margin-right: 12px; font-size: 1.2em;"></i>
+                                        <div class="text-wrap">Developed and managed several YouTube channels from zero
+                                            to monetization, through consistent and targeted branding strategies.</div>
+                                    </div>
+                                    <div class="ios-item">
+                                        <i class="fas fa-chart-line"
+                                            style="color: #34c759; margin-right: 12px; font-size: 1.2em;"></i>
+                                        <div class="text-wrap">Contributed significantly to increasing engagement and
+                                            brand awareness through strategic, audience-based content planning.</div>
+                                    </div>
+                                    <div class="ios-item">
+                                        <i class="fas fa-rocket"
+                                            style="color: #007aff; margin-right: 12px; font-size: 1.2em;"></i>
+                                        <div class="text-wrap">Initiated innovations in production techniques and visual
+                                            storytelling to elevate the team's creative standards and technical
+                                            capabilities.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- App: Contact -->
+                        <div class="app-modal" id="app-contact">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>Contact</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="ios-list">
+                                    <a href="https://twitter.com" class="ios-item-link">
+                                        <i class="fab fa-twitter icon-left" style="color: #1DA1F2;"></i>
+                                        <span>yopi son haji (X)</span>
+                                        <i class="fas fa-chevron-right arrow-right"></i>
+                                    </a>
+                                    <a href="https://h7.cl/1h-0q" class="ios-item-link">
+                                        <i class="fab fa-github icon-left" style="color: #333;"></i>
+                                        <span>GitHub Link</span>
+                                        <i class="fas fa-chevron-right arrow-right"></i>
+                                    </a>
+                                    <a href="http://tiny.cc/957mxz" class="ios-item-link">
+                                        <i class="fab fa-linkedin icon-left" style="color: #0077b5;"></i>
+                                        <span>LinkedIn Link</span>
+                                        <i class="fas fa-chevron-right arrow-right"></i>
+                                    </a>
+                                    <a href="tel:+6281380004443" class="ios-item-link">
+                                        <i class="fas fa-phone-alt icon-left" style="color: #34c759;"></i>
+                                        <span>+62 813-8000-4443</span>
+                                        <i class="fas fa-chevron-right arrow-right"></i>
+                                    </a>
+                                    <a href="mailto:yulison47@gmail.com" class="ios-item-link">
+                                        <i class="fas fa-envelope icon-left" style="color: #007aff;"></i>
+                                        <span>yulison47@gmail.com</span>
+                                        <i class="fas fa-chevron-right arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- App: Settings -->
+                        <div class="app-modal" id="app-settings">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>Settings</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="ios-list-block">
+                                    <div class="list-title">Language</div>
+                                    <a href="index.html" class="ios-item-block">
+                                        <div class="text-col">Bahasa Indonesia</div>
+                                    </a>
+                                    <a href="index_en.html" class="ios-item-block">
+                                        <div class="text-col">English</div>
+                                        <div class="icon-col"><i class="fas fa-check"
+                                                style="color: var(--ios-blue);"></i></div>
+                                    </a>
+                                    <a href="index_ar.html" class="ios-item-block">
+                                        <div class="text-col">Arabic</div>
+                                    </a>
+                                </div>
+
+                                <div class="ios-list-block" style="margin-top: 20px;">
+                                    <div class="list-title">Action</div>
+                                    <div class="ios-item-block" onclick="window.print()" style="cursor: pointer;">
+                                        <div class="text-col" style="color: var(--ios-blue);">Download CV (PDF)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Home Bar Overlay (Click to close apps) -->
+                        <div class="home-bar-area" onclick="closeApp()"></div>
+                    </div> <!-- End Bezel Inner -->
+                </div> <!-- End Bezel Outer -->
+            </div> <!-- End Frame -->
+        </div> <!-- End Container -->
+
+        <script src="script.js"></script>
 </body>
 
 </html>

@@ -4,372 +4,608 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Yopi Son Haji</title>
+    <title>CV - Yopi Son Haji (iPhone 16 Edition)</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Outfit:wght@300;500;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-    <div class="background-animation"></div>
+    <div class="iphone-container">
+        <div class="iphone-frame">
+            <div class="bezel-outer">
+                <div class="bezel-inner">
+                    <div class="screen">
 
-    <!-- Custom Cursor Elements -->
-    <div class="cursor-dot" data-cursor-dot></div>
-    <div class="cursor-outline" data-cursor-outline></div>
+                        <!-- Status Bar -->
+                        <div class="status-bar">
+                            <div class="time" id="status-time">09:41</div>
+                            <div class="dynamic-island">
+                                <div class="camera"></div>
+                                <div class="sensor"></div>
+                            </div>
+                            <div class="status-icons">
+                                <i class="fas fa-signal"></i>
+                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-battery-full"></i>
+                            </div>
+                        </div>
 
-    <div class="main-container">
-        <!-- Language Switcher -->
-        <div class="lang-switcher">
-            <button class="lang-btn active" onclick="window.location.href='index.html'">ID</button>
-            <span class="divider">|</span>
-            <button class="lang-btn" onclick="window.location.href='index_en.html'">EN</button>
-            <span class="divider">|</span>
-            <button class="lang-btn" onclick="window.location.href='index_ar.html'">AR</button>
-        </div>
+                        <!-- Home Screen -->
+                        <div class="home-screen" id="home-screen">
 
-        <!-- Header: Profil Singkat -->
-        <header class="profile-header fade-in-down">
-            <h1>Yopi Son Haji</h1>
-            <p class="futuristic-role" data-i18n="header_role">Kepala Media & Produser Multimedia | Web Developer</p>
-        </header>
+                            <!-- Widgets Area -->
+                            <div class="widgets-area">
+                                <div class="widget profile-widget" onclick="openApp('app-profile', event)">
+                                    <div class="widget-content">
+                                        <div class="profile-pic-small">
+                                            <img src="profile.jpg" alt="Profile">
+                                        </div>
+                                        <div class="profile-text">
+                                            <h3>Yopi Son Haji</h3>
+                                            <p>Kepala Media</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget weather-widget"
+                                    onclick="window.open('https://www.google.com/maps/search/?api=1&query=MMGV%2BV63%2C+Dekat%2C+Jl.+H.+Nursad%2C+Ciater%2C+Kec.+Serpong%2C+Kota+Tangerang+Selatan%2C+Banten+15310', '_blank')">
+                                    <div class="widget-content">
+                                        <i class="fas fa-sun"></i>
+                                        <span>Tangsel</span>
+                                        <h3>32°</h3>
+                                    </div>
+                                </div>
+                            </div>
 
-        <!-- Main Content Area -->
-        <div class="content-wrapper">
+                            <!-- App Grid -->
+                            <div class="app-grid">
+                                <!-- App 1: About (Profil) -->
+                                <div class="app-icon" onclick="openApp('app-summary', event)">
+                                    <div class="icon-box gradient-blue">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <span>About</span>
+                                </div>
 
-            <!-- Dynamic Detail View -->
-            <div class="detail-view" id="detail-view">
-                <!-- Default Message (Now behaves as the Summary Glimpse) -->
-                <div class="detail-content default-message active">
-                    <img src="profile.jpg" alt="Profile"
-                        style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem; border: 2px solid #00ff88; object-fit: cover;">
-                    <h2 data-i18n="summary_title">Ringkasan Profil</h2>
-                    <p data-i18n="summary_desc">Profesional multimedia dengan pengalaman lebih dari 10 tahun dalam
-                        produksi konten digital,
-                        pengelolaan media, dan pengembangan visual branding.</p>
-                </div>
+                                <!-- App 2: Experience (Pengalaman) -->
+                                <div class="app-icon" onclick="openApp('app-experience', event)">
+                                    <div class="icon-box gradient-purple">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <span>Work</span>
+                                </div>
 
-                <!-- Hidden Content Sections -->
+                                <!-- App 3: Education (Pendidikan) -->
+                                <div class="app-icon" onclick="openApp('app-education', event)">
+                                    <div class="icon-box gradient-orange">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <span>Edu</span>
+                                </div>
 
-                <!-- 1. Identitas -->
-                <div id="content-identity" class="hidden-content">
-                    <ul class="info-list">
-                        <li><strong data-i18n="label_name">Nama:</strong> Yopi Son Haji</li>
-                        <li><strong data-i18n="label_born">Umur:</strong> <span data-i18n="val_born">32 Tahun</span>
-                        </li>
-                        <li><strong data-i18n="label_address">Alamat:</strong> <span data-i18n="val_address">Cipete
-                                Selatan, Jakarta Selatan, Indonesia</span></li>
-                        <li><strong data-i18n="label_status">Status:</strong> <span
-                                data-i18n="val_status">Menikah</span></li>
-                        <li><strong data-i18n="label_sim">SIM:</strong> A & C</li>
-                    </ul>
-                </div>
+                                <!-- App 4: Skills (Keahlian) -->
+                                <div class="app-icon" onclick="openApp('app-skills', event)">
+                                    <div class="icon-box gradient-green">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <span>Skills</span>
+                                </div>
 
-                <!-- 2. Posisi -->
-                <div id="content-title" class="hidden-content">
-                    <h2 data-i18n="menu_position">Posisi</h2>
-                    <h3 class="highlight" data-i18n="job_title_1">Kepala Media & Produser Multimedia</h3>
-                    <h3 class="highlight" style="font-size: 1.1rem; color: #00ccff;" data-i18n="job_title_2">Ahli
-                        multimedia
-                        & Web Developer</h3>
-                    <p data-i18n="job_tagline">Memimpin tim media dan IT Support, di salah satu Sekolah Swasta di BSD,
-                        Tangerang untuk memperkuat branding dan meningkatkan visibilitas institusi. Bertanggung jawab
-                        dalam merancang dan melaksanakan strategi komunikasi untuk memperkenalkan sekolah kepada
-                        khalayak luas, dengan fokus pada peningkatan pendaftaran siswa baru. Mengelola dan mengembangkan
-                        konten digital yang efektif untuk meningkatkan engagement, awareness, serta membangun hubungan
-                        yang lebih kuat dengan komunitas.</p>
-                </div>
+                                <!-- App 5: Achievements (Prestasi) -->
+                                <div class="app-icon" onclick="openApp('app-achievements', event)">
+                                    <div class="icon-box gradient-yellow">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <span>Awards</span>
+                                </div>
 
-                <!-- 3. About (Full Version) -->
-                <div id="content-summary" class="hidden-content">
-                    <h2 data-i18n="about_header">Tentang Saya</h2>
+                                <!-- App 6: Certificates (Link External) -->
+                                <a href="certificates.html" target="_blank" class="app-icon">
+                                    <div class="icon-box gradient-red">
+                                        <i class="fas fa-certificate"></i>
+                                    </div>
+                                    <span>Certs</span>
+                                </a>
 
-                    <p class="summary-lead">
-                        Dengan pengalaman lebih dari <span class="neon-cyan">satu dekade</span> di dunia multimedia,
-                        saya telah mengemban peran penting dalam mengembangkan konten visual yang memukau dan
-                        meningkatkan branding lembaga melalui platform digital, khususnya YouTube. Sebagai seorang yang
-                        berdedikasi dan memiliki kemampuan teknis tinggi dalam desain dan pengembangan web, saya
-                        bertekad untuk memberikan kontribusi yang signifikan pada tim kreatif dan produksi perusahaan.
-                    </p>
-                    <h4 class="summary-subhead" data-i18n="key_skills">Keahlian Utama:</h4>
-                    <ul class="summary-points">
-                        <li>
-                            <i class="fas fa-caret-right"></i>
-                            <span><span class="neon-purple">Manajemen Media</span>: Memimpin tim media dan merancang
-                                strategi konten
-                                yang efektif untuk meningkatkan visibilitas dan engagement.</span>
-                        <li>
-                            <i class="fas fa-caret-right"></i>
-                            <span><span class="neon-green">Pertumbuhan YouTube</span>: Mengelola dan mengembangkan
-                                channel YouTube mulai dari tahap awal hingga mencapai
-                                <span class="highlight-text">monetisasi</span>.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-caret-right"></i>
-                            <span><span class="neon-blue">Produksi Konten</span>: Mengarahkan pembuatan konten
-                                berkualitas tinggi
-                                untuk platform televisi dan digital, memastikan standar produksi yang konsisten.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-caret-right"></i>
-                            <span><span class="neon-pink">Kreatif Teknis</span>: Menguasai desain grafis, pengeditan
-                                video, dan
-                                pengembangan web untuk menciptakan pengalaman visual yang menarik dan fungsional.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-caret-right"></i>
-                            <span><span class="neon-cyan">Integrasi AI dengan Multimedia</span>: Mengintegrasikan
-                                kecerdasan buatan
-                                (AI) dengan multimedia untuk memastikan relevansi dan inovasi yang mengikuti
-                                perkembangan zaman.</span>
-                        </li>
-                    </ul>
-                </div>
+                                <!-- App 7: Portfolio (Link External) -->
+                                <a href="portfolio.html" target="_blank" class="app-icon">
+                                    <div class="icon-box gradient-cyan">
+                                        <i class="fas fa-images"></i>
+                                    </div>
+                                    <span>Portfolio</span>
+                                </a>
 
-                <!-- 4. Experience -->
-                <div id="content-experience" class="hidden-content">
-                    <h2 data-i18n="exp_header">Pengalaman Kerja</h2>
-                    <ul class="timeline">
-                        <li>
-                            <span class="date" data-i18n="exp_date_1">2023 - Sekarang</span>
-                            <h4 data-i18n="exp_role_1">Kepala Media</h4>
-                            <p><strong>Ibnu Abbas BSD</strong></p>
-                            <p class="job-desc" data-i18n="exp_desc_1">Bertanggung jawab atas perencanaan, produksi, dan
-                                distribusi konten digital, pengelolaan tim media, serta peningkatan engagement dan
-                                branding institusi.</p>
-                        </li>
-                        <li>
-                            <span class="date" data-i18n="exp_date_2">2017 - 2023</span>
-                            <h4 data-i18n="exp_role_2">Produser & Manajer Produksi</h4>
-                            <p><strong>Annab TV</strong></p>
-                            <p class="job-desc" data-i18n="exp_desc_2">Memimpin produksi program TV & digital, manajemen
-                                kru, serta quality control konten.</p>
-                        </li>
-                        <li>
-                            <span class="date" data-i18n="exp_date_3">2015 - 2017</span>
-                            <h4 data-i18n="exp_role_3">Kameramen & Editor</h4>
-                            <p><strong>Yayasan Sahabat Yamina</strong></p>
-                            <p class="job-desc" data-i18n="exp_desc_3">Operasional kamera dan editing video untuk konten
-                                yayasan.</p>
-                        </li>
-                    </ul>
-                </div>
+                                <!-- App 8: Settings (Language/Theme) -->
+                                <div class="app-icon" onclick="openApp('app-settings', event)">
+                                    <div class="icon-box gradient-gray">
+                                        <i class="fas fa-cog"></i>
+                                    </div>
+                                    <span>Settings</span>
+                                </div>
+                            </div>
 
-                <!-- 5. Education -->
-                <div id="content-education" class="hidden-content">
-                    <h2 data-i18n="edu_header">Pendidikan</h2>
-                    <div class="edu-item">
-                        <i class="fas fa-university" style="color: var(--accent-color); margin-bottom: 0.5rem;"></i>
-                        <h4 data-i18n="edu_major">S1 Teknik Informatika</h4>
-                        <p data-i18n="edu_school">Universitas Pamulang</p>
-                        <p class="date" data-i18n="edu_date">2022 - Sekarang</p>
-                    </div>
-                    <div class="edu-item" style="margin-top: 15px;">
-                        <i class="fas fa-university" style="color: var(--accent-color); margin-bottom: 0.5rem;"></i>
-                        <h4>S1 Sastra Arab</h4>
-                        <p>Al-Mawa Cilengsi</p>
-                        <p class="date">2022 - Sekarang</p>
-                    </div>
-                </div>
+                            <!-- Dock -->
+                            <div class="dock">
+                                <div class="dock-blur"></div>
+                                <div class="app-icon"
+                                    onclick="window.open('https://wa.me/6281380004443?text=Assalamu%E2%80%99alaikum%20Warahmatullahi%20Wabarakatuh%2C%0A%0AHalo%2C%20apa%20kabar%3F%20Semoga%20Anda%20selalu%20dalam%20keadaan%20sehat%20dan%20produktif.%0A%0APerkenalkan%2C%20nama%20saya%20%5BNama%20Anda%5D.%20Saya%20baru%20saja%20meninjau%20CV%20Anda%20dan%20sejujurnya%20saya%20sangat%20terkesan%20dengan%20pengalaman%20serta%20keahlian%20yang%20Anda%20miliki.%0A%0ASaya%20melihat%20ada%20potensi%20besar%20untuk%20kita%20berkolaborasi.%20Apakah%20Anda%20memiliki%20waktu%20luang%20dalam%20waktu%20dekat%3F%20Saya%20ingin%20sekali%20berdiskusi%20lebih%20lanjut%20dengan%20Anda.', '_blank')">
+                                    <div class="icon-box green-phone">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                </div>
+                                <div class="app-icon" onclick="window.location.href='mailto:yulison47@gmail.com'">
+                                    <div class="icon-box blue-mail">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                </div>
+                                <div class="app-icon" onclick="openApp('app-contact', event)">
+                                    <div class="icon-box dark-contact">
+                                        <i class="fas fa-address-book"></i>
+                                    </div>
+                                </div>
+                                <div class="app-icon" onclick="window.open('https://h7.cl/1h-0q', '_blank')">
+                                    <div class="icon-box black-github">
+                                        <i class="fab fa-github"></i>
+                                    </div>
+                                </div>
+                            </div>
 
-                <!-- 6. Skills -->
-                <div id="content-skills" class="hidden-content">
-                    <h2 data-i18n="menu_skills">Keahlian Teknis</h2>
+                            <!-- Home Indicator -->
+                            <div class="home-indicator"></div>
+                        </div>
 
-                    <ul class="summary-points" style="margin-top: 15px;">
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-purple">Adobe Creative Cloud Expertise</span>: Menguasai secara
-                                mendalam penggunaan
-                                aplikasi Adobe Premiere Pro, Photoshop, dan alat desain grafis serta pengeditan video
-                                lainnya, baik di macOS maupun Windows.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-cyan">Kemampuan Pemrograman</span>: Menguasai pengembangan web
-                                menggunakan
-                                <span class="highlight-text"><i class="fab fa-html5"></i> HTML</span>,
-                                <span class="highlight-text"><i class="fab fa-css3-alt"></i> CSS</span>,
-                                <span class="highlight-text"><i class="fab fa-php"></i> PHP</span>, dan
-                                <span class="highlight-text"><i class="fab fa-js"></i> JavaScript</span> dengan
-                                <span class="highlight-text"><i class="fas fa-file-code"></i> Visual Studio Code</span>
-                                sebagai lingkungan pengembangan.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-green">Perawatan & Perbaikan Teknis</span>: Ahli dalam pemeliharaan
-                                dan
-                                troubleshooting perangkat PC serta laptop, mencakup software dan hardware pada sistem
-                                operasi Windows dan macOS.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-blue">Pemulihan Data</span>: Memiliki kemampuan unggul dalam
-                                memulihkan data yang
-                                terformat atau hilang dari berbagai media penyimpanan dengan teknik yang efisien dan
-                                aman.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-pink">Instalasi Software & Troubleshooting</span>: Terampil dalam
-                                instalasi dan
-                                troubleshooting software untuk mengatasi berbagai masalah yang terkait dengan sistem
-                                operasi utama.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-cyan">Inovasi Teknis</span>: Berkomitmen untuk memberikan solusi
-                                kreatif dalam
-                                bidang teknologi, meningkatkan produktivitas dan mendorong inovasi teknis.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="highlight-text">Live Streaming</span>: Berpengalaman lebih dari 500 jam
-                                dalam
-                                penyelenggaraan live streaming, menggunakan berbagai software seperti Wirecast, vMix,
-                                OBS, dan PrimLive Studio.</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle" style="color: var(--accent-color);"></i>
-                            <span><span class="neon-purple">Creative AI Prompt Design</span>: Kemampuan teknis dalam
-                                <span class="highlight-text">merancang prompt secara terstruktur dan kreatif</span>
-                                untuk menghasilkan konten
-                                multimedia berbasis AI yang efektif dan sesuai tujuan.</span>
-                        </li>
-                    </ul>
-                </div>
+                        <!-- === APPS (MODALS) === -->
 
-                <!-- 7. Prestasi -->
-                <div id="content-achievements" class="hidden-content">
-                    <h2 data-i18n="menu_achievement">Prestasi & Pencapaian</h2>
-                    <ul class="achievement-list">
-                        <li><i class="fas fa-tasks"></i> <span>Memimpin dan mengelola tim media dalam produksi konten TV
-                                dan digital berkualitas tinggi, dengan pengelolaan timeline proyek yang efisien.</span>
-                        </li>
-                        <li><i class="fab fa-youtube"></i> <span>Mengembangkan dan mengelola beberapa channel YouTube
-                                dari tahap nol hingga monetisasi, melalui strategi branding yang konsisten dan
-                                terarah.</span></li>
-                        <li><i class="fas fa-chart-line"></i> <span>Berkontribusi signifikan dalam peningkatan
-                                engagement dan brand awareness melalui perencanaan konten yang strategis dan berbasis
-                                audiens.</span></li>
-                        <li><i class="fas fa-lightbulb"></i> <span>Menginisiasi inovasi pada teknik produksi dan narasi
-                                visual guna meningkatkan standar kreativitas serta kapabilitas teknis tim.</span></li>
-                    </ul>
-                </div>
+                        <!-- App: Profile (Identity & Position) -->
+                        <div class="app-modal" id="app-profile">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>Profil</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="profile-large-view">
+                                    <img src="profile.jpg" alt="Profile">
+                                    <h2>Yopi Son Haji</h2>
+                                    <p style="margin-top: 5px;">Kepala Media & Produser Multimedia</p>
+                                    <p style="font-size: 0.9em; color: var(--ios-blue);">Ahli Multimedia & Web
+                                        Developer</p>
+                                </div>
+                                <div class="ios-list-block">
+                                    <div class="list-title">Informasi Pribadi</div>
+                                    <div class="ios-item">
+                                        <span class="label">Nama</span>
+                                        <span class="value">Yopi Son Haji</span>
+                                    </div>
+                                    <div class="ios-item">
+                                        <span class="label">Umur</span>
+                                        <span class="value">32 Tahun</span>
+                                    </div>
+                                    <div class="ios-item">
+                                        <span class="label">Alamat</span>
+                                        <span class="value" style="text-align: right; max-width: 60%;">Cipete
+                                            Selatan,<br>Jakarta Selatan, Indonesia</span>
+                                    </div>
+                                    <div class="ios-item">
+                                        <span class="label">Status</span>
+                                        <span class="value">Menikah</span>
+                                    </div>
+                                    <div class="ios-item">
+                                        <span class="label">SIM</span>
+                                        <span class="value">A & C</span>
+                                    </div>
+                                </div>
 
-                <!-- 8. Portofolio -->
-                <div id="content-portfolio" class="hidden-content">
-                    <h2 data-i18n="contact_header">Media Sosial & Kontak</h2>
-                    <ul class="info-list">
-                        <li>
-                            <strong style="min-width: 120px;"><i class="fab fa-twitter" style="margin-right: 8px;"></i>
-                                X:</strong>
-                            <span>yopi son haji</span>
-                        </li>
-                        <li>
-                            <strong style="min-width: 120px;"><i class="fab fa-github" style="margin-right: 8px;"></i>
-                                GitHub:</strong>
-                            <a href="https://h7.cl/1h-0q" target="_blank"
-                                style="color: #fff; text-decoration: none;">Link GitHub</a>
-                        </li>
-                        <li>
-                            <strong style="min-width: 120px;"><i class="fab fa-linkedin" style="margin-right: 8px;"></i>
-                                LinkedIn:</strong>
-                            <a href="http://tiny.cc/957mxz" target="_blank"
-                                style="color: #fff; text-decoration: none;">Link LinkedIn</a>
-                        </li>
-                        <li>
-                            <strong style="min-width: 120px;"><i class="fas fa-phone-alt"
-                                    style="margin-right: 8px;"></i> Telepon:</strong>
-                            <a href="tel:+6281380004443" style="color: #fff; text-decoration: none;">+62
-                                813-8000-4443</a>
-                        </li>
-                        <li>
-                            <strong style="min-width: 120px;"><i class="fas fa-envelope" style="margin-right: 8px;"></i>
-                                Email:</strong>
-                            <a href="mailto:yulison47@gmail.com"
-                                style="color: #fff; text-decoration: none;">yulison47@gmail.com</a>
-                        </li>
-                    </ul>
+                                <div class="ios-list-block">
+                                    <div class="list-title">Ringkasan Profil</div>
+                                    <div class="ios-item-block" style="display: block;">
+                                        <p style="font-size: 14px; line-height: 1.5; color: var(--text-primary);">
+                                            Profesional multimedia dengan pengalaman lebih dari 10 tahun dalam produksi
+                                            konten digital, pengelolaan media, dan pengembangan visual branding.
+                                        </p>
+                                    </div>
+                                </div>
 
-                </div>
+                                <div class="ios-list-block">
+                                    <div class="list-title">Deskripsi Posisi</div>
+                                    <div class="ios-item-block" style="display: block;">
+                                        <p style="font-size: 14px; line-height: 1.5; color: var(--text-primary);">
+                                            Memimpin tim media dan IT Support, di salah satu Sekolah Swasta di BSD,
+                                            Tangerang untuk memperkuat branding dan meningkatkan visibilitas institusi.
+                                            Bertanggung jawab dalam merancang dan melaksanakan strategi komunikasi untuk
+                                            memperkenalkan sekolah kepada khalayak luas, dengan fokus pada peningkatan
+                                            pendaftaran siswa baru. Mengelola dan mengembangkan konten digital yang
+                                            efektif untuk meningkatkan engagement, awareness, serta membangun hubungan
+                                            yang lebih kuat dengan komunitas.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                <!-- 9. Foto -->
-                <div id="content-photo" class="hidden-content">
-                    <h2 data-i18n="photo_header">Foto Profesional</h2>
-                    <div class="photo-container" style="text-align: center;">
-                        <img src="profile.jpg" alt="Yopi Son Haji"
-                            style="width: 200px; height: 200px; border-radius: 20px; border: 4px solid var(--accent-color); object-fit: cover; box-shadow: 0 0 20px rgba(0,255,136,0.3);">
-                    </div>
-                </div>
-            </div>
+                        <!-- App: About Summary -->
+                        <div class="app-modal" id="app-summary">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>Tentang Saya</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="content-padding">
+                                    <p class="body-text">
+                                        Dengan pengalaman lebih dari <strong>satu dekade</strong> di dunia multimedia,
+                                        saya telah mengemban peran penting dalam mengembangkan konten visual yang
+                                        memukau dan meningkatkan branding lembaga melalui platform digital, khususnya
+                                        YouTube. Sebagai seorang yang berdedikasi dan memiliki kemampuan teknis tinggi
+                                        dalam desain dan pengembangan web, saya bertekad untuk memberikan kontribusi
+                                        yang signifikan pada tim kreatif dan produksi perusahaan.
+                                    </p>
 
-            <!-- Interactive Menu Grid -->
-            <nav class="menu-grid">
-                <div class="menu-item" data-target="identity">
-                    <div class="icon"><i class="fas fa-id-card"></i></div>
-                    <span data-i18n="menu_identity">Identitas</span>
-                </div>
-                <div class="menu-item" data-target="title">
-                    <div class="icon"><i class="fas fa-briefcase"></i></div>
-                    <span data-i18n="menu_position">Posisi</span>
-                </div>
-                <div class="menu-item" data-target="summary">
-                    <div class="icon"><i class="fas fa-user-circle"></i></div>
-                    <span data-i18n="menu_about">About</span>
-                </div>
-                <div class="menu-item" data-target="experience">
-                    <div class="icon"><i class="fas fa-building"></i></div>
-                    <span data-i18n="menu_experience">Experience</span>
-                </div>
-                <div class="menu-item" data-target="education">
-                    <div class="icon"><i class="fas fa-graduation-cap"></i></div>
-                    <span data-i18n="menu_education">Education</span>
-                </div>
-                <div class="menu-item" data-target="skills">
-                    <div class="icon"><i class="fas fa-code"></i></div>
-                    <span data-i18n="menu_skills">Skills</span>
-                </div>
-                <div class="menu-item" data-target="achievements">
-                    <div class="icon"><i class="fas fa-trophy"></i></div>
-                    <span data-i18n="menu_achievement">Achievement</span>
-                </div>
-                <div class="menu-item" data-target="portfolio">
-                    <div class="icon"><i class="fas fa-share-alt"></i></div>
-                    <span data-i18n="menu_contact">Contact</span>
-                </div>
-                <div class="menu-item" data-target="photo">
-                    <div class="icon"><i class="fas fa-camera"></i></div>
-                    <span data-i18n="menu_photo">Foto</span>
-                </div>
-            </nav>
+                                    <h3 class="section-title">Keahlian Utama</h3>
+                                    <div class="ios-list">
+                                        <div class="ios-item" style="display: block; padding: 12px 16px;">
+                                            <h4 style="color: #5e5ce6;"><i class="fas fa-tasks"
+                                                    style="margin-right:8px;"></i>Manajemen Media</h4>
+                                            <p>Memimpin tim media dan merancang strategi konten yang efektif untuk
+                                                meningkatkan visibilitas dan engagement.</p>
+                                        </div>
+                                        <div class="ios-item" style="display: block; padding: 12px 16px;">
+                                            <h4 style="color: #ff0000;"><i class="fab fa-youtube"
+                                                    style="margin-right:8px;"></i>Pertumbuhan YouTube</h4>
+                                            <p>Mengelola dan mengembangkan channel YouTube mulai dari tahap awal hingga
+                                                mencapai monetisasi.</p>
+                                        </div>
+                                        <div class="ios-item" style="display: block; padding: 12px 16px;">
+                                            <h4 style="color: #007aff;"><i class="fas fa-photo-video"
+                                                    style="margin-right:8px;"></i>Produksi Konten</h4>
+                                            <p>Mengarahkan pembuatan konten berkualitas tinggi untuk platform televisi
+                                                dan digital, memastikan standar produksi yang konsisten.</p>
+                                        </div>
+                                        <div class="ios-item" style="display: block; padding: 12px 16px;">
+                                            <h4 style="color: #ff2d55;"><i class="fas fa-pencil-ruler"
+                                                    style="margin-right:8px;"></i>Kreatif Teknis</h4>
+                                            <p>Menguasai desain grafis, pengeditan video, dan pengembangan web untuk
+                                                menciptakan pengalaman visual yang menarik dan fungsional.</p>
+                                        </div>
+                                        <div class="ios-item" style="display: block; padding: 12px 16px;">
+                                            <h4 style="color: #00c7be;"><i class="fas fa-robot"
+                                                    style="margin-right:8px;"></i>Integrasi AI dengan Multimedia</h4>
+                                            <p>Mengintegrasikan kecerdasan buatan (AI) dengan multimedia untuk
+                                                memastikan relevansi dan inovasi yang mengikuti perkembangan zaman.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <!-- Mobile Download Button & Portfolio Launcher (Moved Together) -->
-            <div
-                style="margin-top: auto; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 20px;">
-                <!-- Download Button (Mobile Position: Above Certs / Desktop: Bottom Left) -->
-                <button onclick="window.print()" class="btn-download" id="download-btn">
-                    <i class="fas fa-file-download"></i> Download CV
-                </button>
+                        <!-- App: Experience -->
+                        <div class="app-modal" id="app-experience">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>Pengalaman Kerja</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="timeline-container">
+                                    <!-- Job 1 -->
+                                    <div class="timeline-item">
+                                        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                                        <div class="timeline-content">
+                                            <span class="date">2023 - Sekarang</span>
+                                            <h3>Kepala Media</h3>
+                                            <h4>Ibnu Abbas BSD</h4>
+                                            <p>Bertanggung jawab atas perencanaan, produksi, dan distribusi konten
+                                                digital, pengelolaan tim media, serta peningkatan engagement dan
+                                                branding institusi.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Job 2 -->
+                                    <div class="timeline-item">
+                                        <div class="timeline-icon"><i class="fas fa-tv"></i></div>
+                                        <div class="timeline-content">
+                                            <span class="date">2017 - 2023</span>
+                                            <h3>Produser & Manajer Produksi</h3>
+                                            <h4>Annab TV</h4>
+                                            <p>Memimpin produksi program TV & digital, manajemen kru, serta quality
+                                                control konten.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Job 3 -->
+                                    <div class="timeline-item">
+                                        <div class="timeline-icon"><i class="fas fa-video"></i></div>
+                                        <div class="timeline-content">
+                                            <span class="date">2015 - 2017</span>
+                                            <h3>Kameramen & Editor</h3>
+                                            <h4>Yayasan Sahabat Yamina</h4>
+                                            <p>Operasional kamera dan editing video untuk konten yayasan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                <!-- Portfolio Launcher -->
-                <div class="portfolio-launcher">
-                    <a href="certificates.html" target="_blank" class="btn-portfolio cert-btn">
-                        <span class="btn-text" data-i18n="btn_certificates">Lihat Sertifikat & Penghargaan</span>
-                        <span class="btn-glitch"></span>
-                    </a>
+                        <!-- App: Education -->
+                        <div class="app-modal" id="app-education">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>Pendidikan</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="ios-list-block">
+                                    <div class="list-title">Universitas Pamulang</div>
+                                    <div class="ios-item-block">
+                                        <div class="icon-col"><i class="fas fa-graduation-cap"
+                                                style="color:#007aff;"></i></div>
+                                        <div class="text-col">
+                                            <h3>S1 Teknik Informatika</h3>
+                                            <span class="meta">2022 - Sekarang</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ios-list-block">
+                                    <div class="list-title">Al-Mawa Cilengsi</div>
+                                    <div class="ios-item-block">
+                                        <div class="icon-col"><i class="fas fa-book" style="color:#ff9500;"></i></div>
+                                        <div class="text-col">
+                                            <h3>S1 Sastra Arab</h3>
+                                            <span class="meta">2022 - Sekarang</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <a href="portfolio.html" target="_blank" class="btn-portfolio">
-                        <span class="btn-text" data-i18n="btn_portfolio">Buka Portofolio Project</span>
-                        <span class="btn-glitch"></span>
-                    </a>
-                </div>
-            </div>
+                        <!-- App: Skills -->
+                        <div class="app-modal" id="app-skills">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>Keahlian Teknis</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="ios-list-block">
+                                    <div class="list-title">Expertise</div>
 
-        </div>
-    </div>
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fab fa-adobe" style="color: #ff2d55; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Adobe Creative Cloud
+                                                Expertise</strong>
+                                        </div>
+                                        <p>Menguasai secara mendalam penggunaan aplikasi
+                                            <span class="highlight-text"><i class="fas fa-file-video"
+                                                    style="color: #9999cc;"></i> Adobe Premiere Pro</span>,
+                                            <span class="highlight-text"><i class="fas fa-file-image"
+                                                    style="color: #31a8ff;"></i> Photoshop</span>,
+                                            dan alat desain grafis serta pengeditan video lainnya, baik di
+                                            <span class="highlight-text"><i class="fab fa-apple"
+                                                    style="color: #ffffff;"></i> macOS</span> maupun
+                                            <span class="highlight-text"><i class="fab fa-windows"
+                                                    style="color: #00a4ef;"></i> Windows</span>.
+                                        </p>
+                                    </div>
 
-    <script src="script.js"></script>
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fas fa-code" style="color: #007aff; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Kemampuan Pemrograman</strong>
+                                        </div>
+                                        <p>Menguasai pengembangan web menggunakan
+                                            <span class="highlight-text"><i class="fab fa-html5"
+                                                    style="color: #e34c26;"></i> HTML</span>,
+                                            <span class="highlight-text"><i class="fab fa-css3-alt"
+                                                    style="color: #264de4;"></i> CSS</span>,
+                                            <span class="highlight-text"><i class="fab fa-php"
+                                                    style="color: #777bb4;"></i> PHP</span>, dan
+                                            <span class="highlight-text"><i class="fab fa-js"
+                                                    style="color: #f0db4f;"></i> JavaScript</span> dengan
+                                            <span class="highlight-text"><i class="fas fa-file-code"
+                                                    style="color: #007acc;"></i> Visual Studio Code</span>
+                                            sebagai lingkungan pengembangan.
+                                        </p>
+                                    </div>
+
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fas fa-tools" style="color: #8e8e93; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Perawatan & Perbaikan
+                                                Teknis</strong>
+                                        </div>
+                                        <p>Ahli dalam pemeliharaan dan troubleshooting perangkat PC serta laptop,
+                                            mencakup software dan hardware pada sistem operasi
+                                            <span class="highlight-text"><i class="fab fa-windows"
+                                                    style="color: #00a4ef;"></i> Windows</span> dan
+                                            <span class="highlight-text"><i class="fab fa-apple"
+                                                    style="color: #ffffff;"></i> macOS</span>.
+                                        </p>
+                                    </div>
+
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fas fa-hdd" style="color: #ff9500; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Pemulihan Data</strong>
+                                        </div>
+                                        <p>Memiliki kemampuan unggul dalam memulihkan data yang terformat atau hilang
+                                            dari berbagai media penyimpanan dengan teknik yang efisien dan aman.</p>
+                                    </div>
+
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fas fa-compact-disc"
+                                                style="color: #34c759; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Instalasi Software &
+                                                Troubleshooting</strong>
+                                        </div>
+                                        <p>Terampil dalam instalasi dan troubleshooting software untuk mengatasi
+                                            berbagai masalah yang terkait dengan sistem operasi utama.</p>
+                                    </div>
+
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fas fa-lightbulb" style="color: #ffd60a; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Inovasi Teknis</strong>
+                                        </div>
+                                        <p>Berkomitmen untuk memberikan solusi kreatif dalam bidang teknologi,
+                                            meningkatkan produktivitas dan mendorong inovasi teknis.</p>
+                                    </div>
+
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fas fa-broadcast-tower"
+                                                style="color: #ff2d55; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Live Streaming</strong>
+                                        </div>
+                                        <p>Berpengalaman lebih dari 500 jam dalam penyelenggaraan live streaming,
+                                            menggunakan berbagai software seperti
+                                            <span class="highlight-text"><i class="fas fa-video"
+                                                    style="color: #ff2d55;"></i> Wirecast</span>,
+                                            <span class="highlight-text"><i class="fas fa-play-circle"
+                                                    style="color: #ff9500;"></i> vMix</span>,
+                                            <span class="highlight-text"><i class="fas fa-video"
+                                                    style="color: #ffffff;"></i> OBS</span>, dan
+                                            <span class="highlight-text"><i class="fas fa-mobile-alt"
+                                                    style="color: #34c759;"></i> Prism Live Studio</span>.
+                                        </p>
+                                    </div>
+
+                                    <div class="ios-item" style="display: block;">
+                                        <div style="display:flex; align-items:center; margin-bottom:5px;">
+                                            <i class="fas fa-brain" style="color: #bf5af2; margin-right: 8px;"></i>
+                                            <strong style="color: var(--text-primary);">Creative AI Prompt
+                                                Design</strong>
+                                        </div>
+                                        <p>Kemampuan teknis dalam merancang prompt secara terstruktur dan kreatif untuk
+                                            menghasilkan konten multimedia berbasis AI yang efektif dan sesuai tujuan.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- App: Achievements -->
+                        <div class="app-modal" id="app-achievements">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>Prestasi</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="ios-list">
+                                    <div class="ios-item">
+                                        <i class="fas fa-star"
+                                            style="color: #ffd60a; margin-right: 12px; font-size: 1.2em;"></i>
+                                        <div class="text-wrap">Memimpin dan mengelola tim media dalam produksi konten TV
+                                            dan digital berkualitas tinggi, dengan pengelolaan timeline proyek yang
+                                            efisien.</div>
+                                    </div>
+                                    <div class="ios-item">
+                                        <i class="fab fa-youtube"
+                                            style="color: #ff0000; margin-right: 12px; font-size: 1.2em;"></i>
+                                        <div class="text-wrap">Mengembangkan dan mengelola beberapa channel YouTube dari
+                                            tahap nol hingga monetisasi, melalui strategi branding yang konsisten dan
+                                            terarah.</div>
+                                    </div>
+                                    <div class="ios-item">
+                                        <i class="fas fa-chart-line"
+                                            style="color: #34c759; margin-right: 12px; font-size: 1.2em;"></i>
+                                        <div class="text-wrap">Berkontribusi signifikan dalam peningkatan engagement dan
+                                            brand awareness melalui perencanaan konten yang strategis dan berbasis
+                                            audiens.</div>
+                                    </div>
+                                    <div class="ios-item">
+                                        <i class="fas fa-rocket"
+                                            style="color: #007aff; margin-right: 12px; font-size: 1.2em;"></i>
+                                        <div class="text-wrap">Menginisiasi inovasi pada teknik produksi dan narasi
+                                            visual guna meningkatkan standar kreativitas serta kapabilitas teknis tim.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- App: Contact -->
+                        <div class="app-modal" id="app-contact">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>Kontak</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="ios-list">
+                                    <a href="https://twitter.com" class="ios-item-link">
+                                        <i class="fab fa-twitter icon-left" style="color: #1DA1F2;"></i>
+                                        <span>yopi son haji (X)</span>
+                                        <i class="fas fa-chevron-right arrow-right"></i>
+                                    </a>
+                                    <a href="https://h7.cl/1h-0q" class="ios-item-link">
+                                        <i class="fab fa-github icon-left" style="color: #333;"></i>
+                                        <span>Link GitHub</span>
+                                        <i class="fas fa-chevron-right arrow-right"></i>
+                                    </a>
+                                    <a href="http://tiny.cc/957mxz" class="ios-item-link">
+                                        <i class="fab fa-linkedin icon-left" style="color: #0077b5;"></i>
+                                        <span>Link LinkedIn</span>
+                                        <i class="fas fa-chevron-right arrow-right"></i>
+                                    </a>
+                                    <a href="tel:+6281380004443" class="ios-item-link">
+                                        <i class="fas fa-phone-alt icon-left" style="color: #34c759;"></i>
+                                        <span>+62 813-8000-4443</span>
+                                        <i class="fas fa-chevron-right arrow-right"></i>
+                                    </a>
+                                    <a href="mailto:yulison47@gmail.com" class="ios-item-link">
+                                        <i class="fas fa-envelope icon-left" style="color: #007aff;"></i>
+                                        <span>yulison47@gmail.com</span>
+                                        <i class="fas fa-chevron-right arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- App: Settings -->
+                        <div class="app-modal" id="app-settings">
+                            <div class="app-header">
+                                <button class="back-btn" onclick="closeApp()"><i class="fas fa-chevron-left"></i>
+                                    Home</button>
+                                <h2>Pengaturan</h2>
+                            </div>
+                            <div class="app-content-scroll">
+                                <div class="ios-list-block">
+                                    <div class="list-title">Bahasa</div>
+                                    <a href="index.html" class="ios-item-block">
+                                        <div class="text-col">Bahasa Indonesia</div>
+                                        <div class="icon-col"><i class="fas fa-check"
+                                                style="color: var(--ios-blue);"></i></div>
+                                    </a>
+                                    <a href="index_en.html" class="ios-item-block">
+                                        <div class="text-col">English</div>
+                                    </a>
+                                    <a href="index_ar.html" class="ios-item-block">
+                                        <div class="text-col">Arabic</div>
+                                    </a>
+                                </div>
+
+                                <div class="ios-list-block" style="margin-top: 20px;">
+                                    <div class="list-title">Aksi</div>
+                                    <div class="ios-item-block" onclick="window.print()" style="cursor: pointer;">
+                                        <div class="text-col" style="color: var(--ios-blue);">Download CV (PDF)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Home Bar Overlay (Click to close apps) -->
+                        <div class="home-bar-area" onclick="closeApp()"></div>
+                    </div> <!-- End Bezel Inner -->
+                </div> <!-- End Bezel Outer -->
+            </div> <!-- End Frame -->
+        </div> <!-- End Container -->
+
+        <script src="script.js"></script>
 </body>
 
 </html>
