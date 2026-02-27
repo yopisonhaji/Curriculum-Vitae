@@ -387,11 +387,8 @@ body {
 .widgets-area {
     display: flex;
     gap: 20px;
-    perspective: 1000px;
     z-index: 20;
     position: relative;
-    pointer-events: none;
-    /* Let children handle events */
 }
 
 .widget {
@@ -413,8 +410,6 @@ body {
     position: relative;
     transform: translateZ(15px);
     transition: all 0.4s var(--ease-spring);
-    pointer-events: auto;
-    /* Re-enable pointer events */
 }
 
 .widget:hover {
@@ -506,13 +501,9 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 36px 14px;
     /* Big vertical gap */
-    perspective: 1000px;
-    /* Improve 3d hit testing context */
     z-index: 500;
     /* Raised significantly to ensure it's above background/widgets if overlapping */
     position: relative;
-    pointer-events: none;
-    /* Container passes clicks */
     padding-bottom: 140px;
     /* IMPORTANT: Space for Dock so apps can scroll above it */
 }
@@ -528,7 +519,6 @@ body {
     transition: transform 0.3s;
     position: relative;
     transform-style: preserve-3d;
-    pointer-events: auto;
     -webkit-user-select: none;
     user-select: none;
     z-index: 1005;
@@ -676,8 +666,6 @@ body {
     z-index: 100;
     /* Ensure high z-index */
     transform: translateZ(50px);
-    pointer-events: none;
-    /* Allow clicks to pass through the glass to apps behind */
 }
 
 /* Ensure dock icons capture clicks */
