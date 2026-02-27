@@ -1156,6 +1156,253 @@ body {
     /* Shown only when app is open */
 }
 
+/* === PRINT CV LAYOUT === */
+.print-cv {
+    display: none;
+}
+
+@media print {
+    body {
+        background: #fff !important;
+        margin: 0;
+        padding: 0;
+        overflow: visible !important;
+        height: auto !important;
+        font-family: 'SF Pro Display', 'Outfit', sans-serif;
+    }
+
+    .iphone-container {
+        display: none !important;
+    }
+
+    .print-cv {
+        display: block !important;
+        width: 100%;
+        max-width: 21cm;
+        margin: 0 auto;
+        color: #333;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .print-header {
+        display: flex;
+        align-items: center;
+        border-bottom: 3px solid #007aff;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        page-break-inside: avoid;
+    }
+
+    .print-header img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+        border: 2px solid #007aff;
+    }
+
+    .print-header-text h1 {
+        margin: 0 0 5px 0;
+        font-size: 32px;
+        color: #1d1d1f;
+    }
+
+    .print-header-text h2 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+        color: #007aff;
+        font-weight: 500;
+    }
+
+    .print-contact {
+        font-size: 12px;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .print-contact span {
+        margin-right: 15px;
+        display: inline-block;
+    }
+
+    .print-contact i {
+        margin-right: 5px;
+        color: #007aff;
+    }
+
+    .print-section {
+        margin-bottom: 25px;
+        page-break-inside: avoid;
+    }
+
+    .print-section-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #007aff;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .print-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .print-item {
+        margin-bottom: 15px;
+        page-break-inside: avoid;
+    }
+
+    .print-item h4 {
+        margin: 0 0 5px 0;
+        font-size: 14px;
+        color: #1d1d1f;
+        font-weight: 600;
+    }
+
+    .print-item .meta {
+        font-size: 12px;
+        color: #007aff;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+
+    .print-item p {
+        font-size: 12px;
+        line-height: 1.5;
+        color: #555;
+        margin: 0;
+    }
+
+    .print-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .print-skill-badge {
+        background: #f2f2f7;
+        color: #1d1d1f;
+        padding: 6px 12px;
+        border-radius: 12px;
+        font-size: 11px;
+        border: 1px solid #d1d1d6;
+        font-weight: 500;
+        page-break-inside: avoid;
+    }
+
+    .print-summary {
+        font-size: 13px;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 15px;
+        text-align: justify;
+    }
+
+    .print-summary p {
+        margin: 0 0 10px 0;
+    }
+
+    .print-grid-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 20px;
+        font-size: 13px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .print-grid-item {
+        padding: 5px 0;
+        border-bottom: 1px dashed #eee;
+    }
+
+    .print-expertise-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .print-expertise-item h4 {
+        margin: 0 0 5px 0;
+        font-size: 14px;
+        color: #007aff;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .print-expertise-item p {
+        font-size: 13px;
+        line-height: 1.5;
+        color: #444;
+        margin: 0;
+        text-align: justify;
+    }
+
+    .print-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 3px;
+    }
+
+    .print-item-header h4 {
+        margin: 0;
+        font-size: 15px;
+        color: #1d1d1f;
+        font-weight: 600;
+    }
+
+    .print-item-subtitle {
+        font-size: 14px;
+        color: #007aff;
+        font-weight: 500;
+        margin-bottom: 8px;
+    }
+
+    .print-achievements-full {
+        padding-left: 20px;
+        margin: 0;
+    }
+
+    .print-achievements-full li {
+        font-size: 13px;
+        color: #444;
+        margin-bottom: 10px;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    /* RTL Support for Arabic */
+    html[dir="rtl"] .print-header img {
+        margin-right: 0;
+        margin-left: 20px;
+    }
+
+    html[dir="rtl"] .print-contact span {
+        margin-right: 0;
+        margin-left: 15px;
+    }
+
+    html[dir="rtl"] .print-contact i {
+        margin-right: 0;
+        margin-left: 5px;
+    }
+
+    html[dir="rtl"] .print-achievements {
+        padding-left: 0;
+        padding-right: 20px;
+    }
+}
+
 /* Hide Scrollbar */
 ::-webkit-scrollbar {
     width: 0;
